@@ -1,9 +1,13 @@
 class BookingsController < ApplicationController
   before_action :set_booking, except: []
 
+  def index
+    @booking = Booking.all
+  end
+
   private
 
-  def set_tool
-    @Booking = Booking.find(params[:id])
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end
