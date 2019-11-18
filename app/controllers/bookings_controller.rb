@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, except: []
+  before_action :set_booking, except: [:index]
 
   def index
-    @booking = Booking.all
+    @bookings = Booking.all
   end
 
   private
