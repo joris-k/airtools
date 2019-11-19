@@ -1,0 +1,23 @@
+.center-form-add-tools {
+  margin-left: 270px;
+  width: 700px;
+  padding: 25px;
+  height: 100%;
+  background-color: rgb(254, 254, 254);
+  color: $green-darkest;
+  background-color: #F4F4F4;
+}
+
+.full-page {
+  background-color: white;
+}
+
+.page-picture{
+  height: calc(100vh - 72px);
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+
+}

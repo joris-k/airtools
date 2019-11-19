@@ -1,16 +1,15 @@
-<div class= "full-page-background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path 'zbegzvemk951d8zgkmba', crop: :fill %>)">
-  <div class="d-flex justify-content-center">
-    <div class="center-form ">
-      <%= simple_form_for(@tool) do |f| %>
-          <%= f.input :name%>
-          <%= f.input :category %>
-          <%= f.input :description %>
-          <%= f.input :price %>
-          <%= f.input :photo %>
-          <%= f.input :photo_cache, as: :hidden %>
-          <%= f.button :submit, class: "btn btn-success" %>
-      <% end %>
-    </div>
+<div class="full-page">
+  <div class= "page-picture" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path 'zbegzvemk951d8zgkmba', crop: :fill %>)">
+      <div class="center-form-add-tools ">
+        <%= simple_form_for(@tool) do |f| %>
+            <%= f.input :name%>
+            <%= f.input :category %>
+            <%= f.input :description %>
+            <%= f.input :price %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.button :submit, class: "btn btn-success" %>
+        <% end %>
+      </div>
   </div>
 </div>
-
