@@ -6,7 +6,7 @@
   <h2>Find the right Tool for the Job!</h2>
   <%= simple_form_for :search, url: tools_path, method: "GET", html: { class: '' } do |f| %>
     <%=f.input :category, required: false%>
-    <%=f.input :price, as: :float, required: false%>
+    <%=f.input :price, as: :float, required: false, input_html: { min: "0" }%>
     <%=f.input :location, required: false%>
     <%= f.input :date, input_html: {class: "datepicker"}, required: false%>
     <%=f.submit "Search", class: "btn button" %>
