@@ -5,10 +5,10 @@
   <div class="index-grid-with-filter">
     <div class="filter-box">
       <%= simple_form_for :search, url: tools_path, method: "GET", html: { class: '' } do |f| %>
-        <%=f.input :category, required: false%>
-        <%=f.input :brand, required: false%>
-        <%=f.input :price, as: :float, required: false, input_html: { min: "0" }%>
-        <%=f.input :location, required: false%>
+        <%=f.input :category, required: false, input_html: {value: params[:search][:category]}%>
+        <%=f.input :brand, required: false, input_html: {value: params[:search][:brand]}%>
+        <%=f.input :price, as: :float, required: false, input_html: { min: "0" }, input_html: {value: params[:search][:price]}%>
+        <%=f.input :location, required: false, input_html: {value: params[:search][:location]}%>
         <%= f.input :date, input_html: {class: "datepicker"}, required: false%>
         <%=f.submit "Search", class: "btn button" %>
       <% end %>
