@@ -27,15 +27,15 @@ user3.save!
 
 
 puts 'Creating all tools'
-tool1 = Tool.new(name: 'Electric lawnmower', long:'53.5511° N', lat:'9.9937° E', date: '[[01/11/2019, 30/11/2019], [10/12/2019, 15/12/2019]', price: 25.3, category: 'Lawnmowers', brand: 'Husqvarna', description: 'Electric lawnmower with large capacity grass container.', user: User.find_by(first_name: 'Peter', last_name: 'Lustig'))
+tool1 = Tool.new(name: 'Electric lawnmower', long:'53.5511° N', lat:'9.9937° E', date: '[[01/11/2019, 30/11/2019], [10/12/2019, 15/12/2019]', price: 25.3, category: 'Lawnmowers', brand: 'Husqvarna', description: 'Electric lawnmower with large capacity grass container.', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
 tool1.remote_photo_url = 'https://images.unsplash.com/photo-1564944817179-f03792efda53?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
 tool1.save!
 
-tool2 = Tool.new(name: 'Stihl combustion chainsaw', long:'52.5200° N', lat:'13.4050° E', date: '[[18/11/2019, 25/11/2019], [25/12/2019, 30/12/2019]', price: 20.75, category: 'Chainsaws', brand: 'Stihl', description: 'Combustion chainsaw with 40cm blade for branches and small to medium trees.', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
+tool2 = Tool.new(name: 'Stihl combustion chainsaw', long:'52.5200° N', lat:'13.4050° E', date: '[[18/11/2019, 25/11/2019], [25/12/2019, 30/12/2019]', price: 20.75, category: 'Chainsaws', brand: 'Stihl', description: 'Combustion chainsaw with 40cm blade for branches and small to medium trees.', user: User.find_by(first_name: 'Jan', last_name: 'Pillemann Otze'))
 tool2.remote_photo_url = 'https://images.unsplash.com/photo-1550091345-8c561a255eca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80'
 tool2.save!
 
-tool3 = Tool.new(name: 'Electric leaf blower', long:'52.5200° N', lat:'13.4050° E', date: '[[20/11/2019, 23/11/2019], [10/12/2019, 14/12/2019]', price: 18.95, category: 'Leaf blowers', brand: 'Husqvarna', description: 'Extremely quiet and reliable leaf blower for gardening work aroun the house.', user: User.find_by(first_name: 'Jan', last_name: 'Pillemann Otze'))
+tool3 = Tool.new(name: 'Electric leaf blower', long:'52.5200° N', lat:'13.4050° E', date: '[[20/11/2019, 23/11/2019], [10/12/2019, 14/12/2019]', price: 18.95, category: 'Leaf blowers', brand: 'Husqvarna', description: 'Extremely quiet and reliable leaf blower for gardening work aroun the house.', user: User.find_by(first_name: 'Peter', last_name: 'Lustig'))
 tool3.remote_photo_url = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.homegardencyprus.com%2Fimages%2Fstories%2Fvirtuemart%2Fproduct%2F1315.jpg&f=1&nofb=1'
 tool3.save!
 
@@ -48,23 +48,23 @@ tool5.remote_photo_url = 'https://mantis.com/wp-content/uploads/2016/05/mantis-2
 tool5.save!
 
 tool6 = Tool.new(name: '50 ft. Garden Hose', long:'50.2133° N', lat:'6.9738° E', date: '[[15/11/2019, 20/11/2019], [01/01/2020, 18/01/2020]', price: 10.5, category: 'Hoses', brand: 'Gardena', description: 'Comes with solid metal adapters', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
-tool6.remote_photo_url = 'https://duckduckgo.com/?q=gardening+hose&t=hk&iar=images&iax=images&ia=images&iai=https%3A%2F%2Fwww.wheeliebinstoragedirect.co.uk%2Fwp-content%2Fuploads%2F2018%2F05%2Fbest-garden-hoses.jpg'
+tool6.remote_photo_url = 'https://www.wheeliebinstoragedirect.co.uk/wp-content/uploads/2018/05/best-garden-hoses.jpg'
 tool6.save!
 
 tool7 = Tool.new(name: 'Tumbler Composter', long:'53.5511° N', lat:'9.9937° E', date: '[[28/11/2019, 30/01/2020], [15/01/2020, 19/01/2020]', price: 11.95, category: 'Composters', brand: 'Lifetime', description: 'Reliable and safe', user: User.find_by(first_name: 'Peter', last_name: 'Lustig'))
-tool7.remote_photo_url = 'https://duckduckgo.com/?q=Tumbler+composter&t=hk&iar=images&iax=images&ia=images&iai=https%3A%2F%2Fwww.competitiveedgeproducts.com%2Fassets%2Fimages%2F60130-02.jpg'
+tool7.remote_photo_url = 'https://www.competitiveedgeproducts.com/assets/images/60130-02.jpg'
 tool7.save!
 
 tool8 = Tool.new(name: 'Truper Tru Pro Hoe', long:'52.5200° N', lat:'13.4050° E', date: '[[19/11/2019, 02/01/2020], [13/01/2020, 20/01/2020]', price: 6.4, category: 'Hoes', brand: 'Trumper', description: 'Loyal hoe', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
-tool8.remote_photo_url = 'https://duckduckgo.com/?q=gardening+hoe&t=hk&iar=images&iax=images&ia=images&iai=https%3A%2F%2Fwww.gardeningknowhow.com%2Fwp-content%2Fuploads%2F2017%2F05%2Fhoe.jpg'
+tool8.remote_photo_url = 'https://q7i2y6d5.stackpathcdn.com/wp-content/uploads/2017/05/hoe.jpg'
 tool8.save!
 
 tool9 = Tool.new(name: 'Dual-Wheel Wheelbarrow', long:'48.1351° N', lat:'11.5820° E', date: '[[25/11/2019, 06/01/2020], [19/01/2020, 23/01/2020]', price: 6.4, category: 'Wheelbarrows', brand: 'Scenic road', description: 'This wheelbarrow is very stable and sturdy!!', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
-tool9.remote_photo_url = 'https://duckduckgo.com/?q=two+weeeled+wheelbarrow&t=hk&iar=images&iax=images&ia=images&iai=https%3A%2F%2Fbuyinghack.com%2Fwp-content%2Fuploads%2F2018%2F01%2F2-WHEEL-WHEELBARROWS.jpg'
+tool9.remote_photo_url = 'https://buyinghack.com/wp-content/uploads/2018/01/2-WHEEL-WHEELBARROWS.jpg'
 tool9.save!
 
-tool10 = Tool.new(name: 'Lopper 3000', long:'48.1351° N', lat:'11.5820° E', date: '[[25/11/2019, 06/01/2020], [19/01/2020, 23/01/2020]', price: 6.4, category: 'Loppers', brand: 'Black+Decker', description: 'Cuts branches even when merged with master', user: User.find_by(first_name: 'Jan', last_name: 'Pillemann Otze'))
-tool10.remote_photo_url = 'https://duckduckgo.com/?q=loppers&t=hk&iar=images&iax=images&ia=images&iai=https%3A%2F%2Fvdxl.im%2Fwoger_image%2F411710%2Fgallery_im%2Fchannel%2Fwebshop%2Faction%2Fhd%2Fdelta%2F3%2Fimage.jpg'
+tool10 = Tool.new(name: 'Lopper 3000', long:'48.1351° N', lat:'11.5820° E', date: '[[25/11/2019, 06/01/2020], [19/01/2020, 23/01/2020]', price: 6.4, category: 'Loppers', brand: 'Devaon', description: 'Cuts branches even when merged with master', user: User.find_by(first_name: 'Jan', last_name: 'Pillemann Otze'))
+tool10.remote_photo_url = 'https://www.gardenlines.co.uk/sites/default/files/dn1115qh_davaon_pro_garden_loppers.jpg'
 tool10.save!
 
 puts 'Creating all bookings'
