@@ -1,5 +1,10 @@
 class ToolsController < ApplicationController
-  before_action :set_tool, except: []
+  before_action :set_tool, except: [:index]
+  skip_before_action :authenticate_user!, only: :index
+
+  def index
+    @tools = Tool.all
+  end
 
   private
 
