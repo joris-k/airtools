@@ -9,7 +9,7 @@ class ToolsController < ApplicationController
     search.each do |filter|
       if filter[1] != ""
         value = ""
-        if filter[0] == "category"
+        if filter[0] == "category" || filter[0] == "brand"
           value = filter[1].downcase
           search_command << "#{filter[0]} = :#{filter[0]}"
         elsif filter[0] == "price"
