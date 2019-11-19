@@ -30,4 +30,6 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
-gem 'dotenv-rails'
+# enable picture upload
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
