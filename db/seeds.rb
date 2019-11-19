@@ -68,12 +68,12 @@ tool10.remote_photo_url = 'https://duckduckgo.com/?q=loppers&t=hk&iar=images&iax
 tool10.save!
 
 puts 'Creating all bookings'
-Booking.create!(confirmation: true, comment: 'I might commit a chainsaw massacre', start_date: Date.parse('23/12/2019'), end_date: Date.parse('25/12/2019'), pickup_time: Time.parse('11:00'), user: user2, tool: tool2)
-Booking.create!(confirmation: true, comment: 'Want to clean my lawn and I`m happy to have found your offer!', start_date: Date.parse('17/11/2019'), end_date: Date.parse('23/11/2019'), pickup_time: Time.parse('13:00'), user: user3, tool: tool3)
-Booking.create!(confirmation: true, comment: 'I am looking forward to using your professional lawnmower!!', start_date: Date.parse('18/11/2019'), end_date: Date.parse('28/11/2019'), pickup_time: Time.parse('17:00'), user: user1, tool: tool1)
-Booking.create!(confirmation: true, comment: 'Nice lawnmower.', start_date: Date.parse('19/11/2019'), end_date: Date.parse('28/11/2019'), pickup_time: Time.parse('17:00'), user: user1, tool: tool1)
-Booking.create!(confirmation: true, comment: 'Want to cut down a tree, blocking my view of the river.', start_date: Date.parse('19/11/2019'), end_date: Date.parse('28/11/2019'), pickup_time: Time.parse('17:00'), user: user3, tool: tool2)
-Booking.create!(confirmation: true, comment: 'Need it to cut the lawn of my neighbour because I ran over his cat :(', start_date: Date.parse('2/11/2019'), end_date: Date.parse('3/11/2019'), pickup_time: Time.parse('10:00'), user: user2, tool: tool1)
+Booking.create!(confirmation: true, comment: 'I might commit a chainsaw massacre', dates: '[20/11/2019, 20/11/2019]', pickup_time: Time.parse('11:00'), user: user2, tool: tool2)
+Booking.create!(confirmation: true, comment: 'Want to clean my lawn and I`m happy to have found your offer!', dates: '[20/11/2019, 21/11/2019]', pickup_time: Time.parse('13:00'), user: user3, tool: tool3)
+Booking.create!(confirmation: true, comment: 'I am looking forward to using your professional lawnmower!!', dates: '[10/12/2019, 10/12/2019]', pickup_time: Time.parse('17:00'), user: user1, tool: tool1)
+Booking.create!(confirmation: true, comment: 'Nice lawnmower.', dates: '[[11/12/2019, 12/12/2019]', pickup_time: Time.parse('17:00'), user: user1, tool: tool1)
+Booking.create!(confirmation: true, comment: 'Want to cut down a tree, blocking my view of the river.', dates: '[03/12/2019, 05/12/2019]', pickup_time: Time.parse('17:00'), user: user3, tool: tool2)
+Booking.create!(confirmation: true, comment: 'Need it to cut the lawn of my neighbour because I ran over his cat :(', dates: '[13/12/2019, 14/12/2019]', pickup_time: Time.parse('10:00'), user: user2, tool: tool1)
 puts 'Done!!'
 
 
