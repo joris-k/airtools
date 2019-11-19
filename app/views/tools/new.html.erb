@@ -3,10 +3,10 @@
       <div class="center-form-add-tools ">
         <%= simple_form_for(@tool) do |f| %>
             <%= f.input :name%>
-            <%= f.input :brand%>
-            <%= f.input :category %>
+            <%= f.input :brand, collection: ['A.M. Leonard', 'Bionic Gloves/H&B', 'Bond Manufacturing', 'Centurion Brands', 'CobraHead LLC', 'Corona', 'Earthquake', 'ERA Group', 'Fence Armor', 'Florian Tools', 'Foxgloves', 'Gardener’s Supply Company', 'GreenStalk Gardening Systems', 'High Caliper Growing', 'Maine Garden Products Div. of Bartlett Bench & Wire Inc', 'Melnor', 'Radius Garden', 'Redback', 'Root Assassin LLC', 'Seeding Square']%>
+            <%= f.input :category, collection: ['Trowel', 'Square Shovel', 'Pointed Shovel', 'Garden Fork', 'Potato Fork', 'Spading Fork', 'Border Forks', 'Broadfork', 'Compost Fork', 'Pick', 'Hoe', 'Auger', 'Trench Shovel', 'Post Hole Pincer', 'Wheel Edger', 'Step-On Edger', 'Edging Shears', 'Electric Edger', 'Gas Edger', 'Lawn Mower', 'Leaf Blower', 'String Trimmer', 'Mulcher', 'Spreader', 'Sprinkler', 'Rake', 'Aerator', 'Hose', 'Bulb Planter', 'Hand Weeder', 'Hand Seeder', 'Seeder Row Planter', 'Tiller', 'Planting Dibble', 'Twist Tiller', 'Cultivator', 'Soil Scoop', 'Hand Pruner', 'Hedge Shears', 'Pruning Saw', 'Lopper', 'Pole pruner', 'Tree Pruner', 'Snips', 'Topiary Shears', 'Trailer Sprayer', 'Skid Sprayer', 'Backpack Sprayer', 'Handheld Sprayer', 'Broadcast Sprayer'] %>
             <%= f.input :description %>
-            <%= f.input :price %>
+            <%= f.input :price, :placeholder => 'in €'%>
             <%= f.input :photo %>
             <%= f.input :photo_cache, as: :hidden %>
             <%= f.button :submit, class: "btn btn-success" %>
