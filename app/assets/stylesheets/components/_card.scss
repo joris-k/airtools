@@ -7,16 +7,19 @@
   height: 200px;
   background-position: center;
   background-size: cover;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom: 2px solid #F4F4F4;
 }
 
 .card-info-box {
-  padding: 5px;
+  padding: 5px 10px;
 }
 
 .card-info-row {
   display: flex;
   justify-content: space-between;
-
+  align-items: center;
   p {
     margin: 0;
   }
