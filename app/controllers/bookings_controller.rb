@@ -1,8 +1,28 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, except: [:index]
+  before_action :set_booking, only: []
 
   def index
     @bookings = policy_scope(Booking)
+  end
+
+  def create
+    @tool = Tool.find(params[:tool_id])
+    @booking = Booking.new(bookings_params)
+    @booking.user = current_user
+    @booking.tool = @tool
+    if @booking.save
+      # redirect_to tool_path(@tool)
+      redirect_to root_path
+    else
+      render :new
+    end
+    authorize @booking
+  end
+
+  def new
+    @tool = Tool.find(params[:tool_id])
+    @booking = Booking.new
+    authorize @booking
   end
 
   private
@@ -10,5 +30,9 @@ class BookingsController < ApplicationController
   def set_booking
     @booking = Booking.find(params[:id])
     authorize @booking
+  end
+
+  def bookings_params
+    params.require(:booking).permit(:start_date, :end_date, :comment, :pickup_time)
   end
 end
