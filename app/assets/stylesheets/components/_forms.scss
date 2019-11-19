@@ -1,10 +1,14 @@
 .center-form {
   width: 350px;
   padding: 25px;
-  background-color: rgb(254, 254, 254);
+  background-color: white;
   color: $green-darkest;
 }
 
 .center-form a {
   color: grey;
+}
+
+.form-booking {
+  width: 50%;
 }

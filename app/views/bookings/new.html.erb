@@ -1,10 +1,21 @@
-<div class="container">
-  <%= simple_form_for([@tool, @booking]) do |f| %>
-      <%= f.input :end_date %>
-      <%= f.input :start_date %>
+<div class="container mt-5 d-flex justify-content-between">
+
+  <div class="booking-form">
+    <%= simple_form_for([@tool, @booking], html: { class: '' }) do |f| %>
+      <%= f.input :start_date, as: :string, input_html: {class: ""}, require: false%>
+      <%= f.input :end_date, as: :string, input_html: {class: ""}, require: false %>
       <%= f.input :pickup_time, hint: 'Suggest a time to pick up the tool on the start date of your booking. The owner will let you know if the time works.' %>
       <%= f.input :comment, hint: 'Leave a message for the onwer (optional)' %>
-      <%= f.button :submit %>
+      <%= f.button :submit, class: 'button' %>
   <% end %>
-
+  </div>
+  <div class="card-tool-booking">
+    <%= cl_image_tag @tool.photo, crop: :fill, class: "tool_image" %>
+    <h2 class='tool-name'><%= @tool.name %></h2>
+    <p class='tool-category'><%= @tool.category %></h3>
+    <p class='tool-description'><%= @tool.description %></p>
+    <p>Price/day: <%= @tool.price %> €</p>
+    <p>Days: 2 </p>
+    <p class='tool-price'>Total price: <%= @tool.price %> € </p>
+  </div>
 </div>
