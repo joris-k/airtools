@@ -6,6 +6,9 @@ class ToolsController < ApplicationController
     @tools = policy_scope(Tool)
   end
 
+  def show
+  end
+
   def new
     @tool = Tool.new
     authorize @tool
