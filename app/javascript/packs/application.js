@@ -1,6 +1,2 @@
 import "bootstrap";
-import flatpickr from "flatpickr";
-
-flatpickr(".datepicker", {
-  mode: "range"
-})
+import flatpickr from '../components/datepicker';
