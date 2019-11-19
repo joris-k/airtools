@@ -15,7 +15,7 @@ class ToolsController < ApplicationController
     @tool = Tool.new(tool_params)
     authorize @tool
     @tool.user = current_user
-    if @tool.save
+    if @tool.save!
       redirect_to root_path
     else
       render :new
