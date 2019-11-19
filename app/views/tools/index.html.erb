@@ -1,4 +1,24 @@
-<h1>Your Tools</h1>
-<% @tools.each do |tool| %>
-  <p>tool.name</p>
-<% end %>
+
+
+<div class="standard-container">
+  <h1>Available Tools</h1>
+  <div class="index-grid-with-filter">
+    <div class="filter-box">
+      <%= simple_form_for :search, url: tools_path, method: "GET", html: { class: '' } do |f| %>
+        <%=f.input :category, required: false%>
+        <%=f.input :price, as: :float, required: false, input_html: { min: "0" }%>
+        <%=f.input :location, required: false%>
+        <%= f.input :date, input_html: {class: "datepicker"}, required: false%>
+        <%=f.submit "Search", class: "btn button" %>
+      <% end %>
+    </div>
+    <div class="cards-grid">
+      <% @tools.each do |tool| %>
+        <div class="card">
+          <p><%=tool.name%></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
