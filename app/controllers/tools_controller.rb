@@ -1,6 +1,7 @@
 class ToolsController < ApplicationController
   before_action :set_tool, except: [:index, :new, :create]
   skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: :show
 
   def index
     search = params[:search]
