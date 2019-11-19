@@ -1,6 +1,6 @@
 
 
-<div class="standard-container">
+<div class="container">
   <h1>Available Tools</h1>
   <div class="index-grid-with-filter">
     <div class="filter-box">
@@ -14,8 +14,21 @@
     </div>
     <div class="cards-grid">
       <% @tools.each do |tool| %>
-        <div class="card">
-          <p><%=tool.name%></p>
+        <div class="card-tool">
+          <div class="card-tool-image" style="background-image: url('<%= cl_image_path tool.photo, height: 300, width: 400, crop: :fill %>')"></div>
+          <div class="card-info-box">
+            <div class="card-info-row">
+              <p><%=tool.name%></p>
+              <p><%=tool.price%></p>
+            </div>
+            <div class="card-info-row">
+              <p><%=tool.user.first_name%> <%=tool.user.last_name%></p>
+              <%= link_to(tool) do %>
+                <i class="fas fa-info"></i>
+              <%end%>
+            </div>
+
+          </div>
         </div>
       <% end %>
     </div>
