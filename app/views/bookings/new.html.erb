@@ -2,10 +2,9 @@
 
   <div class="booking-form">
     <%= simple_form_for([@tool, @booking], html: { class: '' }) do |f| %>
-      <%= f.input :start_date, as: :string, input_html: {class: ""}, require: false%>
-      <%= f.input :end_date, as: :string, input_html: {class: ""}, require: false %>
+      <%= f.input :dates, as: :string, input_html: {class: "datepicker"}, require: false%>
       <%= f.input :pickup_time, hint: 'Suggest a time to pick up the tool on the start date of your booking. The owner will let you know if the time works.' %>
-      <%= f.input :comment, hint: 'Leave a message for the onwer (optional)' %>
+      <%= f.input :comment, hint: 'Leave a message for the owner (optional)' %>
       <%= f.button :submit, class: 'button' %>
   <% end %>
   </div>
@@ -19,3 +18,5 @@
     <p class='tool-price'>Total price: <%= @tool.price %> € </p>
   </div>
 </div>
+
+<div class="hidden" id='availabilities'> <%= @tool.date %> </div>

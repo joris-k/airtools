@@ -1,7 +1,9 @@
 import flatpickr from "flatpickr";
 
 flatpickr(".datepicker", {
-  mode: "range"
+  mode: "range",
+  altInput: true
 })
+
 
 export default flatpickr;
