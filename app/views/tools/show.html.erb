@@ -1,8 +1,11 @@
 
 <div class="container">
-  <%= cl_image_tag @tool.photo, height: 300, width: 800, crop: :fill, class: "tool_image" %>
-  <h1><%= @tool.name %></h1>
-  <h2><%= @tool.category %></h2>
-  <p><%= @tool.description %></p>
-  <p>Price: <%= @tool.price %> €</p>
+  <div class="tool_info"></div>
+    <%= cl_image_tag @tool.photo, height: 300, width: 800, crop: :fill, class: "tool_image" %>
+    <h1><%= @tool.name %></h1>
+    <h2><%= @tool.category %></h2>
+    <p><%= @tool.description %></p>
+    <p>Price: <%= @tool.price %> €</p>
+    <%= link_to "Add booking", new_tool_booking_path(@tool), class: "btn btn-success" %>
+  </div>
 </div>
