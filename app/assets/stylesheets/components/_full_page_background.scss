@@ -1,8 +1,9 @@
 .full-page-background{
-  height: 100vh;
+  height: calc(100vh - 72px);
   padding-top: 25px;
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;
   background-position: center;
+
 }
