@@ -6,6 +6,7 @@
     <div class="filter-box">
       <%= simple_form_for :search, url: tools_path, method: "GET", html: { class: '' } do |f| %>
         <%=f.input :category, required: false%>
+        <%=f.input :brand, required: false%>
         <%=f.input :price, as: :float, required: false, input_html: { min: "0" }%>
         <%=f.input :location, required: false%>
         <%= f.input :date, input_html: {class: "datepicker"}, required: false%>
@@ -26,14 +27,12 @@
               <%end%>
             </div>
             <div class="card-info-row mtop-5">
-              <p class="info-text"><%=tool.user.first_name%> <%=tool.user.last_name%></p>
+              <p class="info-text"><%=tool.brand%></p>
               <p class="info-text"><%='%.2f' % tool.price.to_f%>€</p>
             </div>
-
           </div>
         </div>
       <% end %>
     </div>
   </div>
-
 </div>
