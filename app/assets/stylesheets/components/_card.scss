@@ -24,3 +24,24 @@
     margin: 0;
   }
 }
+
+
+.card-tool-booking {
+  background-color: white;
+  width: 30%;
+  padding: 20px;
+  img {
+    width: 100%;
+    object-fit: cover;
+    padding-bottom: 20px;
+  }
+  .tool-category {
+    color: $green-dark
+  }
+  .tool-name {
+    font-size: 20px;
+  }
+  .tool-price {
+    font-weight: bold;
+  }
+}
