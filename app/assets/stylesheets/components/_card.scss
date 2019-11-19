@@ -1,0 +1,23 @@
+.card-tool {
+  border-radius: 4px;
+  background-color: white;
+}
+
+.card-tool-image {
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-info-box {
+  padding: 5px;
+}
+
+.card-info-row {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    margin: 0;
+  }
+}
