@@ -7,9 +7,11 @@ class BookingsController < ApplicationController
 
   def create
     @tool = Tool.find(params[:tool_id])
+    datesArray = params[:booking][:dates].split(' to ')
     @booking = Booking.new(bookings_params)
     @booking.user = current_user
     @booking.tool = @tool
+    @booking.dates = datesArray
     if @booking.save
       # redirect_to tool_path(@tool)
       redirect_to root_path
@@ -33,6 +35,6 @@ class BookingsController < ApplicationController
   end
 
   def bookings_params
-    params.require(:booking).permit(:start_date, :end_date, :comment, :pickup_time)
+    params.require(:booking).permit(:comment, :pickup_time)
   end
 end
