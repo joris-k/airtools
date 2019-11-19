@@ -1,0 +1,10 @@
+<div class="container">
+  <%= simple_form_for([@tool, @booking]) do |f| %>
+      <%= f.input :end_date %>
+      <%= f.input :start_date %>
+      <%= f.input :pickup_time, hint: 'Suggest a time to pick up the tool on the start date of your booking. The owner will let you know if the time works.' %>
+      <%= f.input :comment, hint: 'Leave a message for the onwer (optional)' %>
+      <%= f.button :submit %>
+  <% end %>
+
+</div>
