@@ -44,6 +44,11 @@ class ToolsController < ApplicationController
     end
   end
 
+  def destroy
+    @tool.destroy
+    redirect_to root_path
+  end
+
   private
 
   def tool_params
