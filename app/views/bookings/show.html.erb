@@ -1,17 +1,32 @@
 <div class="container mt-5 d-flex justify-content-between">
   <div>
-    <h3>Status:</h3>
-    <% if @booking.confirmation == nil %>
-      <p>Confirmation pending</p>
-    <% elsif @booking.confirmation %>
-      <p>Booking confirmed</p>
-    <% else %>
-      <p>Booking declined</p>
-    <% end %>
-    <div>
-      <h3>Owner:</h3>
-        <%= @tool.user.first_name%> <%= @tool.user.last_name %>
-    </div>
+    <h3>Your booking</h3>
+    <p>
+      <span>Status:</span>
+      <span>
+        <% if @booking.confirmation == nil %>
+          <span>Confirmation pending</span>
+        <% elsif @booking.confirmation %>
+          <span>Booking confirmed</span>
+        <% else %>
+          <span>Booking declined</span>
+        <% end %>
+      </span>
+    </p>
+    <p>
+      <span>Owner:</span>
+      <span><%= @tool.user.first_name%> <%= @tool.user.last_name %></span>
+    </p>
+    <p>
+      <span>Booking period:</span>
+      <span>
+        <%booking_date = (@booking.dates).to_s.gsub(/\[|\]/,"").gsub(/\"/, "").split(",")%>
+        <%=booking_date[0]%> - <%=booking_date[1]%></span>
+    </p>
+    <p>
+      <span>Suggested pickup time:</span>
+      <span><%= @booking.pickup_time.to_s.match(/\d{2}:\d{2}/)%></span>
+    </p>
     <div class="btn button">
       <%= link_to "Back home", root_path %>
     </div>
