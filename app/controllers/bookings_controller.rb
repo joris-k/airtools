@@ -15,11 +15,12 @@
 
   def create
     @tool = Tool.find(params[:tool_id])
-    datesArray = params[:booking][:dates].split(' to ')
     @booking = Booking.new(bookings_params)
+    if params[:booking][:dates] != ""
+      @booking.dates = params[:booking][:dates].split(' to ')
+    end
     @booking.user = current_user
     @booking.tool = @tool
-    @booking.dates = datesArray
     if @booking.save
       # redirect_to tool_path(@tool)
       redirect_to booking_path(@booking)
