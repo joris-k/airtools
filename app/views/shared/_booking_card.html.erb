@@ -1,0 +1,34 @@
+<div class="card-tool mtop-10">
+  <%= link_to(booking) do %>
+    <div class="card-booking">
+      <div class="card-tool-image card-tool-image-width-30pc card-tool-image-radius-left" style="background-image: url('<%= cl_image_path booking.tool.photo, height: 300, width: 400, crop: :fill %>')"></div>
+      <div class="card-info-box vertical-card-align ">
+        <div class="card-info-row">
+          <p class="booking-tool-name"><%= booking.tool.name %></p>
+          <%confirmation = booking.confirmation%>
+          <p>
+            <%if confirmation.nil?%>
+              <i class="booking-status far fa-circle"></i>
+            <%end%>
+            <%if confirmation%>
+              <i class="booking-status far fa-check-circle"></i>
+            <%end%>
+            <%if !confirmation%>
+              <i class="booking-status far fa-times-circle"></i></i>
+            <%end%>
+          </p>
+        </div>
+        <div class="card-info-row">
+          <%booking_date = (booking.dates).to_s.gsub(/\[|\]/,"").gsub(/\"/,"").split(",")%>
+          <div class="booking-time">
+            <p class="booking-period">Booking period: <%=booking_date[0]%> - <%=booking_date[1]%></p>
+            <p class="booking-pickup">Pickup time: <%=(booking.pickup_time).to_s.match(/\d{2}:\d{2}/)%></p>
+          </div>
+        </div>
+        <div class="card-info-row">
+          <p class="booking-tool-owner">Owner: <%= booking.tool.user.first_name %> <%= booking.tool.user.last_name %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

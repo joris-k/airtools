@@ -4,11 +4,15 @@
   <h1>Available Tools</h1>
   <div class="index-grid-with-filter">
     <div class="filter-box">
+      <%if !params[:search].nil?%>
+        <%price = params[:search][:price]%>
+        <%location = params[:search][:location]%>
+      <%end%>
       <%= simple_form_for :search, url: tools_path, method: "GET", html: { class: '' } do |f| %>
         <%=f.input :category, input_html: {class: "select2"}, required: false, collection: ['Trowel', 'Square Shovel', 'Pointed Shovel', 'Garden Fork', 'Potato Fork', 'Spading Fork', 'Border Forks', 'Broadfork', 'Compost Fork', 'Pick', 'Hoe', 'Auger', 'Trench Shovel', 'Post Hole Pincer', 'Wheel Edger', 'Step-On Edger', 'Edging Shears', 'Electric Edger', 'Gas Edger', 'Lawn Mower', 'Leaf Blower', 'String Trimmer', 'Mulcher', 'Spreader', 'Sprinkler', 'Rake', 'Aerator', 'Hose', 'Bulb Planter', 'Hand Weeder', 'Hand Seeder', 'Seeder Row Planter', 'Tiller', 'Planting Dibble', 'Twist Tiller', 'Cultivator', 'Soil Scoop', 'Hand Pruner', 'Hedge Shears', 'Pruning Saw', 'Lopper', 'Pole pruner', 'Tree Pruner', 'Snips', 'Topiary Shears', 'Trailer Sprayer', 'Skid Sprayer', 'Backpack Sprayer', 'Handheld Sprayer', 'Broadcast Sprayer', 'Chainsaw', 'Composter', 'Wheelbarrow', "Lopper"]%>
         <%=f.input :brand,input_html: {class: "select2"}, required: false, collection: ['A.M. Leonard', 'Bionic Gloves/H&B', 'Einhell', 'Bond Manufacturing', 'Centurion Brands', 'CobraHead LLC', 'Corona', 'Earthquake', 'ERA Group', 'Fence Armor', 'Florian Tools', 'Foxgloves', 'Gardener’s Supply Company', 'GreenStalk Gardening Systems', 'High Caliper Growing', 'Maine Garden Products Div. of Bartlett Bench & Wire Inc', 'Melnor', 'Radius Garden', 'Redback', 'Root Assassin LLC', 'Seeding Square', 'Gardena', 'Stihl', 'Kaercher', 'Husqvarna', 'Mantis', 'Trumper', 'Lifetime', 'Scenic road', 'Devaon']%>
-        <%=f.input :price, as: :float, required: false, input_html: { min: "0" }, input_html: {value: params[:search][:price]}, :placeholder => 'in €'%>
-        <%=f.input :location, required: false, input_html: {value: params[:search][:location]}%>
+        <%=f.input :price, as: :float, required: false, input_html: { min: "0" }, input_html: {value: price}, :placeholder => 'in €'%>
+        <%=f.input :location, required: false, input_html: {value: location }%>
         <%= f.input :date, input_html: {class: "datepicker"}, required: false%>
         <%=f.submit "Search", class: "btn button" %>
       <% end %>
@@ -17,11 +21,10 @@
       <% @tools.each do |tool| %>
         <div class="card-tool">
           <%= link_to(tool) do %>
-            <div class="card-tool-image" style="background-image: url('<%= cl_image_path tool.photo, height: 300, width: 400, crop: :fill %>')"></div>
+            <div class="card-tool-image" style="background-image: url('<%= cl_image_path tool.photo, height: 300, width: 400, crop: :fill %>')"> <p class="category-text category-tag"> <%= tool.category %> </p> </div>
             <div class="card-info-box">
               <div class="card-info-row">
                 <p class="subtitle"><%=tool.name%></p>
-                <p class="category-text"> <%= tool.category %> </p>
               </div>
               <div class="card-info-row mtop-5">
                 <p> <span class = "info-text-bold"> <%='%.2f' % tool.price.to_f%>€ </span> <span class = "info-text">/ day</span></p>
