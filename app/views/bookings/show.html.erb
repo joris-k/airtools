@@ -32,14 +32,18 @@
     </div>
   </div>
 
+
+
   <div class="card-tool-booking">
     <%= cl_image_tag @tool.photo, crop: :fill, class: "tool_image" %>
     <h2 class='tool-name'><%= @tool.name %></h2>
-    <p class='tool-category'><%= @tool.category %></h3>
+    <p class='tool-category'><%= @tool.category %>, <%= @tool.brand %></p>
     <p class='tool-description'><%= @tool.description %></p>
-    <p>Price/day: <%= @tool.price %> €</p>
-    <p>Days: 2 </p>
-    <p class='tool-price'>Total price: <%= @tool.price %> € </p>
+    <p class='tool-description smaller-spacing' id='price-per-day'>Price/day: <%='%.2f' % @tool.price.to_f%> €</p>
+    <% days = ((Date.parse(booking_date[1])-Date.parse(booking_date[0])).to_i) + 1 %>
+    <p class='tool-description smaller-spacing' id='days'>Days: <%= days %> </p>
+    <p class='tool-price' id='total-price'>Total price: <%='%.2f' % (@tool.price*days).to_f%> € </p>
   </div>
 </div>
+
 
