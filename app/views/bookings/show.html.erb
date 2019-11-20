@@ -1,14 +1,13 @@
 <div class="container mt-5 d-flex justify-content-between">
   <div class="ml-5">
     <h3>Your booking</h3>
-    <div class="ml-3">
+    <div class="booking-container">
       <p>
         <!-- <span>Status:</span> -->
-
           <% if @booking.confirmation == nil %>
             <div class="status-line">
               <span>Status: Confirmation pending</span>
-              <span class="lds-dual-ring ml-2"></span>
+              <span class="lds-dual-ring ml-3"></span>
             </div>
           <% elsif @booking.confirmation %>
             <span>Status: Booking confirmed</span>
