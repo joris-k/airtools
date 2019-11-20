@@ -25,6 +25,10 @@ user2.save!
 user3 = User.new(first_name: 'Jan', last_name: 'Pillemann Otze', email: 'jan.pillemannotze@example.com', password: '123456', password_confirmation: '123456', )
 user3.save!
 
+user4 = User.new(first_name: 'Fred', last_name: 'Martin', email: 'fred@example.com', password: '123456', password_confirmation: '123456', )
+user4.save!
+
+
 puts 'Creating all tools'
 tool1 = Tool.new(name: 'Electric lawnmower', long:'53.5511° N', lat:'9.9937° E', date: '[01-11-2019, 30-11-2019], [10-12-2019, 15-12-2019]', price: 25.3, category: 'Lawn Mower', brand: 'Husqvarna', description: 'Electric lawnmower with large capacity grass container.', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
 tool1.remote_photo_url = 'https://images.unsplash.com/photo-1564944817179-f03792efda53?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
@@ -37,6 +41,10 @@ tool2.save!
 tool3 = Tool.new(name: 'Electric leaf blower', long:'52.5200° N', lat:'13.4050° E', date: '[20-11-2019, 23-11-2019], [10-12-2019, 14-12-2019]', price: 18.95, category: 'Leaf Blower', brand: 'Husqvarna', description: 'Extremely quiet and reliable leaf blower for gardening work aroun the house.', user: User.find_by(first_name: 'Peter', last_name: 'Lustig'))
 tool3.remote_photo_url = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.homegardencyprus.com%2Fimages%2Fstories%2Fvirtuemart%2Fproduct%2F1315.jpg&f=1&nofb=1'
 tool3.save!
+
+tool12 = Tool.new(name: 'Petrol Hover Mower', long:'48.1351° N', lat:'11.5820° E', date: '[01-12-2019, 01-01-2020], [10-01-2020, 23-04-2020]', price: 20.0, category: 'Lawn Mower', brand: 'Foxgloves', description: 'Classic hover mower with robust Honda GCV motor and large working width Petrol hover mower Weight 15 kg - Capacity: 160 ccm, Cutting width: 50.5 cm, Metal blade', user: User.find_by(first_name: 'Jan'))
+tool12.remote_photo_url = 'https://www.picclickimg.com/d/l400/pict/202728103222_/Allen-Petrol-Hover-Flymo-Lawnmower-Honda-Gcv160-Engine.jpg'
+tool12.save!
 
 tool4 = Tool.new(name: 'Rake', long:'53.4675° N', lat:'9.6916° E', date: '[21-11-2019, 22-11-2019], [11-12-2019, 14-12-2019]', price: 5.5, category: 'Rake', brand: 'Gardena', description: 'Flexible yet sturdy', user: User.find_by(first_name: 'Jan', last_name: 'Pillemann Otze'))
 tool4.remote_photo_url = 'https://nicollzg.files.wordpress.com/2016/06/rake.jpg?w=1200'
@@ -58,7 +66,11 @@ tool8 = Tool.new(name: 'Truper Tru Pro Hoe', long:'52.5200° N', lat:'13.4050° 
 tool8.remote_photo_url = 'https://q7i2y6d5.stackpathcdn.com/wp-content/uploads/2017/05/hoe.jpg'
 tool8.save!
 
-tool9 = Tool.new(name: 'Dual-Wheel Wheelbarrow', long:'48.1351° N', lat:'11.5820° E', date: '[25-11-2019, 06-01-2020], [19-01-2020, 23-01-2020]', price: 6.4, category: 'Wheelbarrow', brand: 'Scenic road', description: 'This wheelbarrow is very stable and sturdy!!', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
+tool15 = Tool.new(name: 'Electric trim Lawn Mower', long:'48.1351° N', lat:'11.5820° E', date: '[01-12-2019, 23-12-2019], [10-01-2020, 30-03-2020]', price: 16.5, category: 'Lawn Mower', brand: 'Radius Garden', description: "If you’re looking for a year-round plant that will make your garden stand out, opt for evergreen shrubs. Both colourful and reliable, they are great for hedges, borders and even as standalone features. Popular evergreen shrubs include boxwood, daphne, aucuba and euonymus.", user: User.find_by(first_name: 'Jan'))
+tool15.remote_photo_url = 'https://www.idealhomeshow.co.uk/images/2019/02/fd2afbbd7a.png'
+tool15.save!
+
+tool9 = Tool.new(name: 'Dual-Wheel Wheelbarrow', long:'48.1351° N', lat:'11.5820° E', date: '[25-11-2019, 06-01-2020], [19-01-2020, 23-01-2020]', price: 6.4, category: 'Wheelbarrow', brand: 'Scenic road', description: 'This wheelbarrow is very stable and sturdy!!', user: User.find_by(first_name: 'Fred'))
 tool9.remote_photo_url = 'https://buyinghack.com/wp-content/uploads/2018/01/2-WHEEL-WHEELBARROWS.jpg'
 tool9.save!
 
@@ -66,15 +78,25 @@ tool10 = Tool.new(name: 'Lopper 3000', long:'48.1351° N', lat:'11.5820° E', da
 tool10.remote_photo_url = 'https://www.gardenlines.co.uk/sites/default/files/dn1115qh_davaon_pro_garden_loppers.jpg'
 tool10.save!
 
-tool11 = Tool.new(name: 'Cordless Lawn Mower', long:'48.1351° N', lat:'11.5820° E', date: '[25-11-2019, 06-01-2020], [19-01-2020, 23-01-2020]', price: 6.4, category: 'Lawn Mower', brand: 'Einhell', description: 'The GE-CM 43 Li M cordless lawn mower is a high-quality, reliable and extremely powerful tool which cares for larger lawns without being connected to a socket. With the new Power X-Change battery system from Einhell the lawn mower has two powerful 18 V battery packs with 4.0 Ah for long work sessions without any bothersome power cables. For simple, individual adjustment of the cutting height there is a central 6-level cutting height adjustment facility. The GE-CM 43 Li M is equipped with a folding, long handle which is height-adjustable to three levels. It can therefore be adjusted perfectly to users of all sizes and stored away in minimum space. Each battery has a charge level indicator with three LEDs where you can check the current charge level at a glance. In addition, the battery packs can be used for all the tools in the Power X-Change family. Complete with two high-speed chargers. As a highwheeler, the GE-CM 43 Li M features extra-high rear wheels for easier operation in difficult terrain. Also, large wheels exert less stress on the lawn. The grass box is equipped with a level indicator so that you can see at a glance when it is time to empty the box. The long-lasting housing is made of high-grade, impact-resistant plastic. For easy transportation there is a practical carry-handle. In addition the cuttings can be finely shredded by a mulching kit before they are evenly distributed over the lawn. The GE-CM 43 Li M is recommended for lawns of up to 600 m².', user: User.find_by(first_name: 'Peter'))
-tool11.remote_photo_url = 'https://assets.einhell.com/im/imf/y400/900_441024/example_usage.jpg'
+tool11 = Tool.new(name: 'Cordless Lawn Mower', long:'48.1351° N', lat:'11.5820° E', date: '[25-11-2019, 06-01-2020], [19-01-2020, 23-01-2020]', price: 23.5, category: 'Lawn Mower', brand: 'Einhell', description: 'The GE-CM 43 Li M cordless lawn mower is a high-quality, reliable and extremely powerful tool which cares for larger lawns without being connected to a socket. With the new Power X-Change battery system from Einhell the lawn mower has two powerful 18 V battery packs with 4.0 Ah for long work sessions without any bothersome power cables. For simple, individual adjustment of the cutting height there is a central 6-level cutting height adjustment facility. The GE-CM 43 Li M is equipped with a folding, long handle which is height-adjustable to three levels. It can therefore be adjusted perfectly to users of all sizes and stored away in minimum space. Each battery has a charge level indicator with three LEDs where you can check the current charge level at a glance. In addition, the battery packs can be used for all the tools in the Power X-Change family. Complete with two high-speed chargers. As a highwheeler, the GE-CM 43 Li M features extra-high rear wheels for easier operation in difficult terrain. Also, large wheels exert less stress on the lawn. The grass box is equipped with a level indicator so that you can see at a glance when it is time to empty the box. The long-lasting housing is made of high-grade, impact-resistant plastic. For easy transportation there is a practical carry-handle. In addition the cuttings can be finely shredded by a mulching kit before they are evenly distributed over the lawn. The GE-CM 43 Li M is recommended for lawns of up to 600 m².', user: User.find_by(first_name: 'Jan'))
+tool11.remote_photo_url = 'https://ksassets.timeincuk.net/wp/uploads/sites/56/2018/04/Aldi-Cordless-Lawn-Mower.jpg'
 tool11.save!
 
+tool13 = Tool.new(name: 'Propelled Lawn Mower', long:'48.1351° N', lat:'11.5820° E', date: '[01-01-2020, 01-04-2020], [10-04-2020, 30-05-2020]', price: 18.0, category: 'Lawn Mower', brand: 'GreenStalk Gardening Systems', description: 'Brand new come with battery and charger', user: User.find_by(first_name: 'Mara'))
+tool13.remote_photo_url = 'https://cdn.opereviews.com/wp-content/uploads/sites/3/2018/08/EGO-21-Dual-Battery-Mower_5-770x472.jpg'
+tool13.save!
+
+tool14 = Tool.new(name: 'Hydrostatic Riding Mower', long:'48.1351° N', lat:'11.5820° E', date: '[01-12-2019, 23-12-2019], [10-01-2020, 30-03-2020]', price: 42.0, category: 'Lawn Mower', brand: 'Husqvarna', description: "Husqvarna's riding lawn mowers offer premium performance with quality results. Their compact size makes them easy to maneuver and require less space for storage. Features such as fender-mounted cutting height adjustment, adjustable seat and an ergonomic steering wheel make these tractors simple and comfortable to operate. All tractors feature hydrostatic transmissions for smooth, variable forward and reverse speed. Air induction mowing technology improves airflow within the deck, ensuring a clean, consistent cut every time. For added versatility, all models can be equipped with a range of tow-able accessories and mulch kit for effective lawn fertilization.", user: User.find_by(first_name: 'Mara'))
+tool14.remote_photo_url = 'https://commercialmowerreviews.com/wp-content/uploads/2019/07/best-riding-lawn-mowers.jpg'
+tool14.save!
+
+
+
 puts 'Creating all bookings'
-Booking.create!(confirmation: true, comment: 'I might commit a chainsaw massacre', dates: '[20-11-2019, 20-11-2019]', pickup_time: Time.parse('11:00'), user: user2, tool: tool2)
+Booking.create!(comment: 'I might commit a chainsaw massacre', dates: '[20-11-2019, 20-11-2019]', pickup_time: Time.parse('11:00'), user: user2, tool: tool2)
 Booking.create!(confirmation: true, comment: 'Want to clean my lawn and I`m happy to have found your offer!', dates: '[20-11-2019, 21-11-2019]', pickup_time: Time.parse('13:00'), user: user3, tool: tool3)
-Booking.create!(confirmation: true, comment: 'I am looking forward to using your professional lawnmower!!', dates: '[10-12-2019, 10-12-2019]', pickup_time: Time.parse('17:00'), user: user1, tool: tool1)
-Booking.create!(confirmation: true, comment: 'Nice lawnmower.', dates: '[11-12-2019, 12-12-2019]', pickup_time: Time.parse('17:00'), user: user1, tool: tool10)
+Booking.create!(confirmation: true, comment: 'I am looking forward to using your professional lawnmower!!', dates: '[10-12-2019, 10-12-2019]', pickup_time: Time.parse('17:00'), user: user1, tool: tool9)
+Booking.create!(confirmation: false, comment: 'Looking to use the rake in my backyard', dates: '[11-12-2019, 12-12-2019]', pickup_time: Time.parse('17:00'), user: user1, tool: tool4)
 Booking.create!(confirmation: true, comment: 'Want to cut down a tree, blocking my view of the river.', dates: '[03-12-2019, 05-12-2019]', pickup_time: Time.parse('17:00'), user: user3, tool: tool2)
 Booking.create!(confirmation: true, comment: 'Need it to cut the lawn of my neighbour because I ran over his cat :(', dates: '[13-12-2019, 14-12-2019]', pickup_time: Time.parse('10:00'), user: user2, tool: tool1)
 puts 'Done!!'
