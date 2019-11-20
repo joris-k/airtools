@@ -3,7 +3,6 @@ class Booking < ApplicationRecord
   belongs_to :tool
   # has_one :user, through: :tool
 
-  validates :confirmation, acceptance: true
   validates :dates, presence: true
 
   def self.own_bookings(user)
