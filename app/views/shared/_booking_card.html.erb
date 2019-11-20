@@ -9,12 +9,10 @@
           <p>
             <%if confirmation.nil?%>
               <i class="booking-status far fa-circle"></i>
-            <%end%>
-            <%if confirmation%>
+            <%elsif confirmation%>
               <i class="booking-status far fa-check-circle"></i>
-            <%end%>
-            <%if !confirmation%>
-              <i class="booking-status far fa-times-circle"></i></i>
+            <%elsif !confirmation%>
+              <i class="booking-status far fa-times-circle"></i>
             <%end%>
           </p>
         </div>
