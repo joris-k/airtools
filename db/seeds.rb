@@ -27,7 +27,7 @@ user3.save!
 
 
 puts 'Creating all tools'
-tool1 = Tool.new(name: 'Electric lawnmower', long:'53.5511° N', lat:'9.9937° E', date: '[01-11-2019, 30-11-2019], [10-12-2019, 15-12-2019]', price: 25.3, category: 'Lawnmowers', brand: 'Husqvarna', description: 'Electric lawnmower with large capacity grass container.', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
+tool1 = Tool.new(name: 'Electric lawnmower', long:'53.5511° N', lat:'9.9937° E', date: '[01-11-2019, 30-11-2019], [10-12-2019, 15-12-2019]', price: 25.3, category: 'Lawn Mower', brand: 'Husqvarna', description: 'Electric lawnmower with large capacity grass container.', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
 tool1.remote_photo_url = 'https://images.unsplash.com/photo-1564944817179-f03792efda53?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
 tool1.save!
 
@@ -35,7 +35,7 @@ tool2 = Tool.new(name: 'Stihl combustion chainsaw', long:'52.5200° N', lat:'13.
 tool2.remote_photo_url = 'https://images.unsplash.com/photo-1550091345-8c561a255eca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80'
 tool2.save!
 
-tool3 = Tool.new(name: 'Electric leaf blower', long:'52.5200° N', lat:'13.4050° E', date: '[20-11-2019, 23-11-2019], [10-12-2019, 14-12-2019]', price: 18.95, category: 'Leaf blowers', brand: 'Husqvarna', description: 'Extremely quiet and reliable leaf blower for gardening work aroun the house.', user: User.find_by(first_name: 'Peter', last_name: 'Lustig'))
+tool3 = Tool.new(name: 'Electric leaf blower', long:'52.5200° N', lat:'13.4050° E', date: '[20-11-2019, 23-11-2019], [10-12-2019, 14-12-2019]', price: 18.95, category: 'Leaf Blower', brand: 'Husqvarna', description: 'Extremely quiet and reliable leaf blower for gardening work aroun the house.', user: User.find_by(first_name: 'Peter', last_name: 'Lustig'))
 tool3.remote_photo_url = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.homegardencyprus.com%2Fimages%2Fstories%2Fvirtuemart%2Fproduct%2F1315.jpg&f=1&nofb=1'
 tool3.save!
 
@@ -43,11 +43,11 @@ tool4 = Tool.new(name: 'Rake', long:'53.4675° N', lat:'9.6916° E', date: '[21-
 tool4.remote_photo_url = 'https://nicollzg.files.wordpress.com/2016/06/rake.jpg?w=1200'
 tool4.save!
 
-tool5 = Tool.new(name: '4-Cycle Tiller', long:'50.2133° N', lat:'6.9738° E', date: '[01-11-2019, 28-11-2019], [20-12-2019, 23-12-2019]', price: 40, category: 'Tillers', brand: 'Mantis', description: 'Extremely powerful and loud', user: User.find_by(first_name: 'Peter', last_name: 'Lustig'))
+tool5 = Tool.new(name: '4-Cycle Tiller', long:'50.2133° N', lat:'6.9738° E', date: '[01-11-2019, 28-11-2019], [20-12-2019, 23-12-2019]', price: 40, category: 'Tiller', brand: 'Mantis', description: 'Extremely powerful and loud', user: User.find_by(first_name: 'Peter', last_name: 'Lustig'))
 tool5.remote_photo_url = 'https://mantis.com/wp-content/uploads/2016/05/mantis-2-cycle-tiller-with-faststart-01.jpg'
 tool5.save!
 
-tool6 = Tool.new(name: '50 ft. Garden Hose', long:'50.2133° N', lat:'6.9738° E', date: '[15-11-2019, 20-11-2019], [01-01-2020, 18-01-2020]', price: 10.5, category: 'Hoses', brand: 'Gardena', description: 'Comes with solid metal adapters', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
+tool6 = Tool.new(name: '50 ft. Garden Hose', long:'50.2133° N', lat:'6.9738° E', date: '[15-11-2019, 20-11-2019], [01-01-2020, 18-01-2020]', price: 10.5, category: 'Hose', brand: 'Gardena', description: 'Comes with solid metal adapters', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
 tool6.remote_photo_url = 'https://www.wheeliebinstoragedirect.co.uk/wp-content/uploads/2018/05/best-garden-hoses.jpg'
 tool6.save!
 
@@ -71,7 +71,7 @@ puts 'Creating all bookings'
 Booking.create!(confirmation: true, comment: 'I might commit a chainsaw massacre', dates: '[20-11-2019, 20-11-2019]', pickup_time: Time.parse('11:00'), user: user2, tool: tool2)
 Booking.create!(confirmation: true, comment: 'Want to clean my lawn and I`m happy to have found your offer!', dates: '[20-11-2019, 21-11-2019]', pickup_time: Time.parse('13:00'), user: user3, tool: tool3)
 Booking.create!(confirmation: true, comment: 'I am looking forward to using your professional lawnmower!!', dates: '[10-12-2019, 10-12-2019]', pickup_time: Time.parse('17:00'), user: user1, tool: tool1)
-Booking.create!(confirmation: true, comment: 'Nice lawnmower.', dates: '[11-12-2019, 12-12-2019]', pickup_time: Time.parse('17:00'), user: user1, tool: tool1)
+Booking.create!(confirmation: true, comment: 'Nice lawnmower.', dates: '[11-12-2019, 12-12-2019]', pickup_time: Time.parse('17:00'), user: user1, tool: tool10)
 Booking.create!(confirmation: true, comment: 'Want to cut down a tree, blocking my view of the river.', dates: '[03-12-2019, 05-12-2019]', pickup_time: Time.parse('17:00'), user: user3, tool: tool2)
 Booking.create!(confirmation: true, comment: 'Need it to cut the lawn of my neighbour because I ran over his cat :(', dates: '[13-12-2019, 14-12-2019]', pickup_time: Time.parse('10:00'), user: user2, tool: tool1)
 puts 'Done!!'
