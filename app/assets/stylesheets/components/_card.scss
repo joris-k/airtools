@@ -3,6 +3,13 @@
   background-color: white;
 }
 
+.card-tool a:hover {
+  text-decoration: none;
+  * {
+    color: $green-darkest;
+  }
+}
+
 .card-tool-image {
   height: 200px;
   background-position: center;
