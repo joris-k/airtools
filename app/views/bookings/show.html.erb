@@ -1,35 +1,38 @@
 <div class="container mt-5 d-flex justify-content-between">
-  <div>
+  <div class="ml-5">
     <h3>Your booking</h3>
-    <p>
-      <span>Status:</span>
-      <span>
-        <% if @booking.confirmation == nil %>
-          <span>Confirmation pending</span>
-        <% elsif @booking.confirmation %>
-          <span>Booking confirmed</span>
-        <% else %>
-          <span>Booking declined</span>
-        <% end %>
-      </span>
-    </p>
-    <p>
-      <span>Owner:</span>
-      <span><%= @tool.user.first_name%> <%= @tool.user.last_name %></span>
-    </p>
-    <p>
-      <span>Booking period:</span>
-      <span>
-        <%booking_date = (@booking.dates).to_s.gsub(/\[|\]/,"").gsub(/\"/, "").split(",")%>
-        <%=booking_date[0]%> - <%=booking_date[1]%></span>
-    </p>
-    <p>
-      <span>Suggested pickup time:</span>
-      <span><%= @booking.pickup_time.to_s.match(/\d{2}:\d{2}/)%></span>
-    </p>
-    <div class="btn button">
-      <%= link_to "Back home", root_path %>
+    <div class="ml-3">
+      <p>
+        <!-- <span>Status:</span> -->
+
+          <% if @booking.confirmation == nil %>
+            <div class="status-line">
+              <span>Status: Confirmation pending</span>
+              <span class="lds-dual-ring ml-2"></span>
+            </div>
+          <% elsif @booking.confirmation %>
+            <span>Status: Booking confirmed</span>
+          <% else %>
+            <span>Status: Booking declined</span>
+          <% end %>
+
+      </p>
+      <p>
+        <span>Owner:</span>
+        <span><%= @tool.user.first_name%> <%= @tool.user.last_name %></span>
+      </p>
+      <p>
+        <span>Booking period:</span>
+        <span>
+          <%booking_date = (@booking.dates).to_s.gsub(/\[|\]/,"").gsub(/\"/, "").split(",")%>
+          <%=booking_date[0]%> - <%=booking_date[1]%></span>
+      </p>
+      <p>
+        <span>Suggested pickup time:</span>
+        <span><%= @booking.pickup_time.to_s.match(/\d{2}:\d{2}/)%></span>
+      </p>
     </div>
+    <a class="btn button" href="/">Back home</a>
   </div>
 
 
