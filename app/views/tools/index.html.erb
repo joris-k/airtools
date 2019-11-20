@@ -17,20 +17,18 @@
       <% @tools.each do |tool| %>
         <div class="card-tool">
           <%= link_to(tool) do %>
-              <div class="card-tool-image" style="background-image: url('<%= cl_image_path tool.photo, height: 300, width: 400, crop: :fill %>')"></div>
+            <div class="card-tool-image" style="background-image: url('<%= cl_image_path tool.photo, height: 300, width: 400, crop: :fill %>')"></div>
+            <div class="card-info-box">
+              <div class="card-info-row">
+                <p class="subtitle"><%=tool.name%></p>
+                <p class="category-text"> <%= tool.category %> </p>
+              </div>
+              <div class="card-info-row mtop-5">
+                <p> <span class = "info-text-bold"> <%='%.2f' % tool.price.to_f%>€ </span> <span class = "info-text">/ day</span></p>
+                <p class="category-text"><%=tool.brand%></p>
+              </div>
+            </div>
           <%end%>
-          <div class="card-info-box">
-            <div class="card-info-row">
-              <p class="subtitle"><%=tool.name%></p>
-              <%= link_to(tool) do %>
-                <i class="fas fa-info"></i>
-              <%end%>
-            </div>
-            <div class="card-info-row mtop-5">
-              <p class="info-text"><%=tool.brand%></p>
-              <p class="info-text"><%='%.2f' % tool.price.to_f%>€</p>
-            </div>
-          </div>
         </div>
       <% end %>
     </div>
