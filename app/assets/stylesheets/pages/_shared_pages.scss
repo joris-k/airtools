@@ -6,10 +6,24 @@
 .subtitle {
   font-size: 16px;
   font-weight: 600;
+  color: black;
 }
 
 .info-text {
   font-size: 12px;
+  color: black;
+}
+
+.category-text {
+  font-size: 12px;
+  color: $green;
+}
+
+
+.info-text-bold {
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
 }
 
 .mtop-5 {
