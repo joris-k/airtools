@@ -30,7 +30,7 @@ user4.save!
 
 
 puts 'Creating all tools'
-tool1 = Tool.new(name: 'Electric lawnmower', long:'53.5511° N', lat:'9.9937° E', date: '[01-11-2019, 30-11-2019], [10-12-2019, 15-12-2019]', price: 25.3, category: 'Lawn Mower', brand: 'Husqvarna', description: 'Electric lawnmower with large capacity grass container.', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
+tool1 = Tool.new(name: 'Electric lawnmower', long:'53.5511° N', lat:'9.9937° E', date: '[01-11-2019, 30-11-2019], [10-12-2019, 15-12-2019]', price: 35.3, category: 'Lawn Mower', brand: 'Husqvarna', description: 'Electric lawnmower with large capacity grass container.', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
 tool1.remote_photo_url = 'https://images.unsplash.com/photo-1564944817179-f03792efda53?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
 tool1.save!
 
