@@ -3,8 +3,8 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
-    @own_bookings = @bookings.where(user: current_user)
-    @other_bookings = @bookings.where(tool.user = current_user)
+    @own_bookings = Booking.own_bookings(current_user)
+    @user_tool = Booking.own_tool_bookings(current_user)
   end
 
   def create

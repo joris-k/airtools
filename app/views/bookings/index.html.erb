@@ -1,13 +1,11 @@
-<div class="container mtop-5">
-  <h1>Your Bookings</h1>
-
+<div class="container mtop-20">
+  <h1>Tools I Booked</h1>
   <% @own_bookings.each do |booking| %>
-    <div>
-      <div class="card-tool-image" style="background-image: url('<%= cl_image_path booking.tool.photo, height: 300, width: 400, crop: :fill %>')"></div>
-      <p><%= booking.tool.name %></p>
-      <p></p>
-      <p>Owner: <%= booking.tool.user.first_name %></p>
-    </div>
+    <%= render 'shared/booking_card', booking: booking%>
+  <% end %>
 
+  <h1 class="mtop-20">Bookings For My Tools</h1>
+  <% @user_tool.each do |booking| %>
+    <%= render 'shared/booking_card', booking: booking%>
   <% end %>
 </div>
