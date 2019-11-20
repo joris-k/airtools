@@ -9,7 +9,7 @@
       <h3>Brand: <%= @tool.brand %></h3>
       <p>Category: <%= @tool.category %></p>
       <p>Description: <%= @tool.description %></p>
-      <p>Price: <%= @tool.price %> €</p>
+      <p>Price: <%='%.2f' % @tool.price.to_f%> €</p>
       <div class="booking-card">
       <%= link_to "Add booking", new_tool_booking_path(@tool), class: "btn button" %>
       <p>Owner: <%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
