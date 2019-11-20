@@ -10,6 +10,7 @@
   }
 }
 
+
 .card-tool-image {
   height: 200px;
   background-position: center;
@@ -19,8 +20,18 @@
   border-bottom: 2px solid #F4F4F4;
 }
 
+.card-tool-image-width-30pc {
+  width: 40%;
+}
+
+.card-tool-image-radius-left {
+  border-top-right-radius: 0px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
 .card-info-box {
   padding: 5px 10px;
+  width: 100%;
 }
 
 .card-info-row {
@@ -55,3 +66,50 @@
     margin-bottom: 5px;
   }
 }
+
+.card-booking {
+  display: flex;
+  width: 100%;
+  background-color: white;
+}
+
+.card-booking a:hover {
+  text-decoration: none;
+  * {
+    color: $green-darkest;
+  }
+}
+
+.fa-times-circle {
+  color: red;
+}
+
+.fa-check-circle {
+  color: $green-mint;
+}
+
+.booking-status {
+  font-size: 30px;
+}
+
+.booking-tool-name {
+  font-size: 30px;
+  color: $green-darkest;
+}
+
+.booking-time {
+  p {
+    color: black;
+  }
+}
+
+.booking-tool-owner {
+  color: black;
+}
+
+.vertical-card-align {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
