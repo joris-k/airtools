@@ -7,19 +7,21 @@ class ToolsController < ApplicationController
     search = params[:search]
     search_command = []
     search_values = {}
-    search.each do |filter|
-      if filter[1] != ""
-        value = ""
-        if filter[0] == "category" || filter[0] == "brand"
-          value = filter[1]
-          search_command << "#{filter[0]} = :#{filter[0]}"
-        elsif filter[0] == "price"
-          value = filter[1].to_i
-          search_command << "#{filter[0]} <= :#{filter[0]}"
-        elsif filter[0] == "location"
-        elsif filter[0] == "date"
+    if !search.nil?
+      search.each do |filter|
+        if filter[1] != ""
+          value = ""
+          if filter[0] == "category" || filter[0] == "brand"
+            value = filter[1]
+            search_command << "#{filter[0]} = :#{filter[0]}"
+          elsif filter[0] == "price"
+            value = filter[1].to_i
+            search_command << "#{filter[0]} <= :#{filter[0]}"
+          elsif filter[0] == "location"
+          elsif filter[0] == "date"
+          end
+          search_values[filter[0].to_sym] = value
         end
-        search_values[filter[0].to_sym] = value
       end
     end
     @tools = policy_scope(Tool).where(search_command.join(" AND "), search_values)
