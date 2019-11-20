@@ -1,0 +1,30 @@
+<div class="container mt-5 d-flex justify-content-between">
+  <div>
+    <h3>Status:</h3>
+    <% if @booking.confirmation == nil %>
+      <p>Confirmation pending</p>
+    <% elsif @booking.confirmation %>
+      <p>Booking confirmed</p>
+    <% else %>
+      <p>Booking declined</p>
+    <% end %>
+    <div>
+      <h3>Owner:</h3>
+        <%= @tool.user.first_name%> <%= @tool.user.last_name %>
+    </div>
+    <div class="btn button">
+      <%= link_to "Back home", root_path %>
+    </div>
+  </div>
+
+  <div class="card-tool-booking">
+    <%= cl_image_tag @tool.photo, crop: :fill, class: "tool_image" %>
+    <h2 class='tool-name'><%= @tool.name %></h2>
+    <p class='tool-category'><%= @tool.category %></h3>
+    <p class='tool-description'><%= @tool.description %></p>
+    <p>Price/day: <%= @tool.price %> €</p>
+    <p>Days: 2 </p>
+    <p class='tool-price'>Total price: <%= @tool.price %> € </p>
+  </div>
+</div>
+

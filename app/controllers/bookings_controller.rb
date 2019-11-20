@@ -5,6 +5,12 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking)
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @tool = @booking.tool
+  end
+
   def create
     @tool = Tool.find(params[:tool_id])
     datesArray = params[:booking][:dates].split(' to ')
@@ -14,7 +20,7 @@ class BookingsController < ApplicationController
     @booking.dates = datesArray
     if @booking.save
       # redirect_to tool_path(@tool)
-      redirect_to root_path
+      redirect_to booking_path(@booking)
     else
       render :new
     end
