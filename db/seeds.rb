@@ -25,13 +25,12 @@ user2.save!
 user3 = User.new(first_name: 'Jan', last_name: 'Pillemann Otze', email: 'jan.pillemannotze@example.com', password: '123456', password_confirmation: '123456', )
 user3.save!
 
-
 puts 'Creating all tools'
 tool1 = Tool.new(name: 'Electric lawnmower', long:'53.5511° N', lat:'9.9937° E', date: '[01-11-2019, 30-11-2019], [10-12-2019, 15-12-2019]', price: 25.3, category: 'Lawn Mower', brand: 'Husqvarna', description: 'Electric lawnmower with large capacity grass container.', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
 tool1.remote_photo_url = 'https://images.unsplash.com/photo-1564944817179-f03792efda53?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
 tool1.save!
 
-tool2 = Tool.new(name: 'Stihl combustion chainsaw', long:'52.5200° N', lat:'13.4050° E', date: '[18-11-2019, 25-11-2019], [25-12-2019, 30-12-2019]', price: 20.75, category: 'Chainsaws', brand: 'Stihl', description: 'Combustion chainsaw with 40cm blade for branches and small to medium trees.', user: User.find_by(first_name: 'Jan', last_name: 'Pillemann Otze'))
+tool2 = Tool.new(name: 'Stihl combustion chainsaw', long:'52.5200° N', lat:'13.4050° E', date: '[18-11-2019, 25-11-2019], [25-12-2019, 30-12-2019]', price: 20.75, category: 'Chainsaw', brand: 'Stihl', description: 'Combustion chainsaw with 40cm blade for branches and small to medium trees.', user: User.find_by(first_name: 'Jan', last_name: 'Pillemann Otze'))
 tool2.remote_photo_url = 'https://images.unsplash.com/photo-1550091345-8c561a255eca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80'
 tool2.save!
 
@@ -39,7 +38,7 @@ tool3 = Tool.new(name: 'Electric leaf blower', long:'52.5200° N', lat:'13.4050�
 tool3.remote_photo_url = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.homegardencyprus.com%2Fimages%2Fstories%2Fvirtuemart%2Fproduct%2F1315.jpg&f=1&nofb=1'
 tool3.save!
 
-tool4 = Tool.new(name: 'Rake', long:'53.4675° N', lat:'9.6916° E', date: '[21-11-2019, 22-11-2019], [11-12-2019, 14-12-2019]', price: 5.5, category: 'Rakes', brand: 'Gardena', description: 'Flexible yet sturdy', user: User.find_by(first_name: 'Jan', last_name: 'Pillemann Otze'))
+tool4 = Tool.new(name: 'Rake', long:'53.4675° N', lat:'9.6916° E', date: '[21-11-2019, 22-11-2019], [11-12-2019, 14-12-2019]', price: 5.5, category: 'Rake', brand: 'Gardena', description: 'Flexible yet sturdy', user: User.find_by(first_name: 'Jan', last_name: 'Pillemann Otze'))
 tool4.remote_photo_url = 'https://nicollzg.files.wordpress.com/2016/06/rake.jpg?w=1200'
 tool4.save!
 
@@ -51,21 +50,25 @@ tool6 = Tool.new(name: '50 ft. Garden Hose', long:'50.2133° N', lat:'6.9738° E
 tool6.remote_photo_url = 'https://www.wheeliebinstoragedirect.co.uk/wp-content/uploads/2018/05/best-garden-hoses.jpg'
 tool6.save!
 
-tool7 = Tool.new(name: 'Tumbler Composter', long:'53.5511° N', lat:'9.9937° E', date: '[28-11-2019, 30-01-2020], [15-01-2020, 19-01-2020]', price: 11.95, category: 'Composters', brand: 'Lifetime', description: 'Reliable and safe', user: User.find_by(first_name: 'Peter', last_name: 'Lustig'))
+tool7 = Tool.new(name: 'Tumbler Composter', long:'53.5511° N', lat:'9.9937° E', date: '[28-11-2019, 30-01-2020], [15-01-2020, 19-01-2020]', price: 11.95, category: 'Composter', brand: 'Lifetime', description: 'Reliable and safe', user: User.find_by(first_name: 'Peter', last_name: 'Lustig'))
 tool7.remote_photo_url = 'https://www.competitiveedgeproducts.com/assets/images/60130-02.jpg'
 tool7.save!
 
-tool8 = Tool.new(name: 'Truper Tru Pro Hoe', long:'52.5200° N', lat:'13.4050° E', date: '[19-11-2019, 02-01-2020], [13-01-2020, 20-01-2020]', price: 6.4, category: 'Hoes', brand: 'Trumper', description: 'Loyal hoe', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
+tool8 = Tool.new(name: 'Truper Tru Pro Hoe', long:'52.5200° N', lat:'13.4050° E', date: '[19-11-2019, 02-01-2020], [13-01-2020, 20-01-2020]', price: 6.4, category: 'Hoe', brand: 'Trumper', description: 'Loyal hoe', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
 tool8.remote_photo_url = 'https://q7i2y6d5.stackpathcdn.com/wp-content/uploads/2017/05/hoe.jpg'
 tool8.save!
 
-tool9 = Tool.new(name: 'Dual-Wheel Wheelbarrow', long:'48.1351° N', lat:'11.5820° E', date: '[25-11-2019, 06-01-2020], [19-01-2020, 23-01-2020]', price: 6.4, category: 'Wheelbarrows', brand: 'Scenic road', description: 'This wheelbarrow is very stable and sturdy!!', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
+tool9 = Tool.new(name: 'Dual-Wheel Wheelbarrow', long:'48.1351° N', lat:'11.5820° E', date: '[25-11-2019, 06-01-2020], [19-01-2020, 23-01-2020]', price: 6.4, category: 'Wheelbarrow', brand: 'Scenic road', description: 'This wheelbarrow is very stable and sturdy!!', user: User.find_by(first_name: 'Mara', last_name: 'Musterfrau'))
 tool9.remote_photo_url = 'https://buyinghack.com/wp-content/uploads/2018/01/2-WHEEL-WHEELBARROWS.jpg'
 tool9.save!
 
-tool10 = Tool.new(name: 'Lopper 3000', long:'48.1351° N', lat:'11.5820° E', date: '[25-11-2019, 06-01-2020], [19-01-2020, 23-01-2020]', price: 6.4, category: 'Loppers', brand: 'Devaon', description: 'Cuts branches even when merged with master', user: User.find_by(first_name: 'Jan', last_name: 'Pillemann Otze'))
+tool10 = Tool.new(name: 'Lopper 3000', long:'48.1351° N', lat:'11.5820° E', date: '[25-11-2019, 06-01-2020], [19-01-2020, 23-01-2020]', price: 6.4, category: 'Lopper', brand: 'Devaon', description: 'Cuts branches even when merged with master', user: User.find_by(first_name: 'Jan', last_name: 'Pillemann Otze'))
 tool10.remote_photo_url = 'https://www.gardenlines.co.uk/sites/default/files/dn1115qh_davaon_pro_garden_loppers.jpg'
 tool10.save!
+
+tool11 = Tool.new(name: 'Cordless Lawn Mower', long:'48.1351° N', lat:'11.5820° E', date: '[25-11-2019, 06-01-2020], [19-01-2020, 23-01-2020]', price: 6.4, category: 'Lawn Mower', brand: 'Einhell', description: 'The GE-CM 43 Li M cordless lawn mower is a high-quality, reliable and extremely powerful tool which cares for larger lawns without being connected to a socket. With the new Power X-Change battery system from Einhell the lawn mower has two powerful 18 V battery packs with 4.0 Ah for long work sessions without any bothersome power cables. For simple, individual adjustment of the cutting height there is a central 6-level cutting height adjustment facility. The GE-CM 43 Li M is equipped with a folding, long handle which is height-adjustable to three levels. It can therefore be adjusted perfectly to users of all sizes and stored away in minimum space. Each battery has a charge level indicator with three LEDs where you can check the current charge level at a glance. In addition, the battery packs can be used for all the tools in the Power X-Change family. Complete with two high-speed chargers. As a highwheeler, the GE-CM 43 Li M features extra-high rear wheels for easier operation in difficult terrain. Also, large wheels exert less stress on the lawn. The grass box is equipped with a level indicator so that you can see at a glance when it is time to empty the box. The long-lasting housing is made of high-grade, impact-resistant plastic. For easy transportation there is a practical carry-handle. In addition the cuttings can be finely shredded by a mulching kit before they are evenly distributed over the lawn. The GE-CM 43 Li M is recommended for lawns of up to 600 m².', user: User.find_by(first_name: 'Peter'))
+tool11.remote_photo_url = 'https://assets.einhell.com/im/imf/y400/900_441024/example_usage.jpg'
+tool11.save!
 
 puts 'Creating all bookings'
 Booking.create!(confirmation: true, comment: 'I might commit a chainsaw massacre', dates: '[20-11-2019, 20-11-2019]', pickup_time: Time.parse('11:00'), user: user2, tool: tool2)
