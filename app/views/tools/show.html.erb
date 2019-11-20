@@ -1,11 +1,19 @@
 
 <div class="container">
-  <div class="tool_info"></div>
-    <%= cl_image_tag @tool.photo, height: 300, width: 800, crop: :fill, class: "tool_image" %>
-    <h1><%= @tool.name %></h1>
-    <h2><%= @tool.category %></h2>
-    <p><%= @tool.description %></p>
-    <p>Price: <%= @tool.price %> €</p>
-    <%= link_to "Add booking", new_tool_booking_path(@tool), class: "btn btn-success" %>
+  <div class="tool_info">
+    <div class="image-card">
+      <%= cl_image_tag @tool.photo, height: 500, width: 500, crop: :fill, class: "tool_image" %>
+    </div>
+    <div class="info-card">
+      <h1><%= @tool.name %></h1>
+      <h3>Brand: <%= @tool.brand %></h3>
+      <p>Category: <%= @tool.category %></p>
+      <p>Description: <%= @tool.description %></p>
+      <p>Price: <%= @tool.price %> €</p>
+      <div class="booking-card">
+      <%= link_to "Add booking", new_tool_booking_path(@tool), class: "btn button" %>
+      <p>Owner: <%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
+      </div>
+    </div>
   </div>
 </div>

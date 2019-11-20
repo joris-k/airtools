@@ -1,4 +1,9 @@
 .button {
   padding: 5px 20px;
   background-color: $green-mint;
+  color: white;
+}
+
+.button:hover {
+  color:white
 }
