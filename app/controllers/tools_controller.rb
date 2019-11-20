@@ -35,8 +35,10 @@ class ToolsController < ApplicationController
 
   def create
     @tool = Tool.new(tool_params)
+    date_array = params[:tool][:date].split(' to ')
     authorize @tool
     @tool.user = current_user
+    @tool.date = date_array
     if @tool.save
       redirect_to tool_path(@tool)
     else
