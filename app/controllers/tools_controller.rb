@@ -11,7 +11,7 @@ class ToolsController < ApplicationController
       if filter[1] != ""
         value = ""
         if filter[0] == "category" || filter[0] == "brand"
-          value = filter[1].downcase
+          value = filter[1]
           search_command << "#{filter[0]} = :#{filter[0]}"
         elsif filter[0] == "price"
           value = filter[1].to_i
