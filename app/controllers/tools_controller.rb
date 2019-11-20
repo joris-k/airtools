@@ -4,6 +4,15 @@ class ToolsController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def index
+    @map_tools = Tool.geocoded
+
+    @markers = @map_tools.map do |tool|
+      {
+        lat: tool.latitude,
+        lng: tool.longitude
+      }
+    end
+
     search = params[:search]
     search_command = []
     search_values = {}

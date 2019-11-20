@@ -20,3 +20,8 @@
   background-color: white;
   padding: 15px;
 }
+
+#map-container {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
