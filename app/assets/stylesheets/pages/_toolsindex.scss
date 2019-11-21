@@ -25,3 +25,18 @@
   grid-column-start: 1;
   grid-column-end: 4;
 }
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgb( 247, 247, 247) !important;
+  text-align: left;
+}
+
+.mapboxgl-popup-close-button {
+  opacity: 0.3;
+}

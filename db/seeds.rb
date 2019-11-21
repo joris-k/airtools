@@ -82,7 +82,7 @@ tool11 = Tool.new(name: 'Cordless Lawn Mower', address: 'Genslerstraße 20', dat
 tool11.remote_photo_url = 'https://ksassets.timeincuk.net/wp/uploads/sites/56/2018/04/Aldi-Cordless-Lawn-Mower.jpg'
 tool11.save!
 
-tool13 = Tool.new(name: 'Propelled Lawn Mower', address: 'Leopoldstraße 3', date: '[01-01-2020, 01-04-2020], [10-04-2020, 30-05-2020]', price: 18.0, category: 'Lawn Mower', brand: 'GreenStalk Gardening Systems', description: 'Brand new come with battery and charger', user: User.find_by(first_name: 'Mara'))
+tool13 = Tool.new(name: 'Propelled Lawn Mower', address: 'Wilhelms Allee 8', date: '[01-01-2020, 01-04-2020], [10-04-2020, 30-05-2020]', price: 18.0, category: 'Lawn Mower', brand: 'GreenStalk Gardening Systems', description: 'Brand new come with battery and charger', user: User.find_by(first_name: 'Mara'))
 tool13.remote_photo_url = 'https://cdn.opereviews.com/wp-content/uploads/sites/3/2018/08/EGO-21-Dual-Battery-Mower_5-770x472.jpg'
 tool13.save!
 
