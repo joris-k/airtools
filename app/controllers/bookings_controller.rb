@@ -32,7 +32,7 @@
       render :new
     end
     authorize @booking
-    configure_notification(@booking)
+    notification_request(@booking)
   end
 
   def new
@@ -43,16 +43,14 @@
 
   def update
     booking_data = bookings_params
-    if booking_data["confirmation"] == "true"
+    response = booking_data["confirmation"]
+    if response == "true"
       @booking.confirmation = true
     else
       @booking.confirmation = false
     end
     @booking.save
-    notification = Notification.new(message: "You have received a response regarding the #{@booking.tool.name}.", read: false)
-    notification.user = @booking.user
-    notification.booking = @booking
-    notification.save
+    notification_response(@booking, response)
     redirect_to @booking
   end
 
@@ -67,7 +65,18 @@
     params.require(:booking).permit(:comment, :pickup_time, :confirmation)
   end
 
-  def configure_notification(booking)
+  def notification_response(booking, response)
+    if response == true
+      notification = Notification.new(message: "Your booking of the #{@booking.tool.name} has been confirmed.", read: false)
+    elsif response == false
+      notification = Notification.new(message: "Your booking of the #{@booking.tool.name} has been declined.", read: false)
+    end
+    notification.user = booking.user
+    notification.booking = booking
+    notification.save
+  end
+
+  def notification_request(booking)
     notification = Notification.new(message: "You have received a new booking request for #{@booking.tool.name}", read: false)
     notification.user = booking.tool.user
     notification.booking = booking
