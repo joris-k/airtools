@@ -14,7 +14,7 @@ const addLinkInNavbarToggle = () => {
     navBarItems[0].classList.add('active');
   else if (webPath === "tools/new")
     navBarItems[1].classList.add('active');
-  else
+  else if (webPath[0] === "b")
     navBarItems[2].classList.add('active');
 };
 
