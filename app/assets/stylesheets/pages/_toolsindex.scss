@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-gap: 10px;
-  grid-auto-rows: 200px;
   margin: 30px 0px;
 }
 
@@ -14,6 +13,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
+  grid-auto-rows: auto;
 }
 
 .filter {
@@ -25,3 +25,4 @@
   grid-column-start: 1;
   grid-column-end: 4;
 }
+
