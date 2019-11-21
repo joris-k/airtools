@@ -54,12 +54,15 @@
   }
 }
 
+.card-tool-booking-outer {
+  width: 30%;
+}
 
 .card-tool-booking {
   background-color: white;
   border-radius: 2px;
-  width: 30%;
-  padding: 20px;
+  padding: 20px
+;
   img {
     width: 100%;
     object-fit: cover;
