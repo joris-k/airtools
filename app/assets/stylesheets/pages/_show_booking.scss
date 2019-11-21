@@ -24,8 +24,10 @@
 };
 
 .status-line {
-  display: flex;
-  align-items: center;
+  p {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
 }
 
 .booking-container {
@@ -33,5 +35,17 @@
   padding: 2px 20px;
   margin-bottom: 20px;
   border-radius: 2px;
-  padding-right: 100px;
+}
+
+.tool-card-link {
+  a {
+    color: $green-darkest;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $green-mint;
+  }
+  // text-decoration: none;
+
 }

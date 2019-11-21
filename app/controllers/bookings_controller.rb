@@ -1,5 +1,5 @@
  class BookingsController < ApplicationController
-  before_action :set_booking, only: []
+  before_action :set_booking, only: [:update]
 
   def index
     @bookings = policy_scope(Booking)
@@ -39,6 +39,17 @@
     authorize @booking
   end
 
+  def update
+    booking_data = bookings_params
+    if booking_data["confirmation"] == "true"
+      @booking.confirmation = true
+    else
+      @booking.confirmation = false
+    end
+    @booking.save
+    redirect_to @booking
+  end
+
   private
 
   def set_booking
@@ -47,6 +58,6 @@
   end
 
   def bookings_params
-    params.require(:booking).permit(:comment, :pickup_time)
+    params.require(:booking).permit(:comment, :pickup_time, :confirmation)
   end
 end
