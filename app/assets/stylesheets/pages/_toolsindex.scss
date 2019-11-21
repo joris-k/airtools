@@ -16,6 +16,7 @@
   grid-auto-rows: auto;
 }
 
+
 .cards-grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -25,7 +26,10 @@
 .filter {
   background-color: white;
   padding: 15px;
+  position: sticky;
+  top: 87px;
 }
+
 
 #map-container {
   grid-column-start: 1;
