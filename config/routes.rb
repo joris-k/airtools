@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :tools, only: [:create, :new, :index, :show, :destroy, :edit, :update] do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:show, :index, :update]
+  resources :bookings, only: [:show, :index, :update] do
+    resources :notifications, only: [:update]
+  end
 end

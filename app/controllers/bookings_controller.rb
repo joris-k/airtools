@@ -32,10 +32,7 @@
       render :new
     end
     authorize @booking
-    notification = Notification.new(message: "You have received a new booking request for #{@booking.tool}.", read: false)
-    notification.user = @booking.tool.user
-    notification.booking = @booking
-    notification.save
+    notification_request(@booking)
   end
 
   def new
@@ -46,16 +43,14 @@
 
   def update
     booking_data = bookings_params
-    if booking_data["confirmation"] == "true"
+    response = booking_data["confirmation"]
+    if response == "true"
       @booking.confirmation = true
     else
       @booking.confirmation = false
     end
     @booking.save
-    notification = Notification.new(message: "You have received a response regarding the #{@booking.tool.name}.", read: false)
-    notification.user = @booking.user
-    notification.booking = @booking
-    notification.save
+    notification_response(@booking, response)
     redirect_to @booking
   end
 
@@ -68,5 +63,25 @@
 
   def bookings_params
     params.require(:booking).permit(:comment, :pickup_time, :confirmation)
+  end
+
+  def notification_response(booking, response)
+    p response
+    if response == "true"
+      text = "Your booking of the #{@booking.tool.name.downcase} has been confirmed."
+    else
+      text = "Your booking of the #{@booking.tool.name.downcase} has been declined."
+    end
+    notification = Notification.new(message: text, read: false)
+    notification.user = booking.user
+    notification.booking = booking
+    notification.save
+  end
+
+  def notification_request(booking)
+    notification = Notification.new(message: "You have received a new booking request for your tool '#{@booking.tool.name.downcase}'", read: false)
+    notification.user = booking.tool.user
+    notification.booking = booking
+    notification.save
   end
 end
