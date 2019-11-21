@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+puts 'Destroying all notifications'
+Notification.destroy_all
+
 puts 'Destroying all bookings'
 Booking.destroy_all
 
@@ -13,6 +17,8 @@ Tool.destroy_all
 
 puts 'Destroying all users'
 User.destroy_all
+
+
 
 
 puts 'Creating all users'
