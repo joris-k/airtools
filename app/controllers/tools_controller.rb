@@ -4,15 +4,7 @@ class ToolsController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def index
-    @map_tools = Tool.geocoded
 
-    @markers = @map_tools.map do |tool|
-      {
-        lat: tool.latitude,
-        lng: tool.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { tool: tool })
-      }
-    end
 
     search = params[:search]
     search_command = []
@@ -36,7 +28,16 @@ class ToolsController < ApplicationController
     end
     @tools = policy_scope(Tool).where(search_command.join(" AND "), search_values)
     if search[:date] != ''
-     @tools = filter_by_date(@tools, search['date'])
+      @tools = filter_by_date(@tools, search['date'])
+    end
+    @map_tools = @tools.geocoded
+
+    @markers = @map_tools.map do |tool|
+      {
+        lat: tool.latitude,
+        lng: tool.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { tool: tool })
+      }
     end
   end
 
