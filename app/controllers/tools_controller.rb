@@ -34,6 +34,9 @@ class ToolsController < ApplicationController
       end
     end
     @tools = policy_scope(Tool).where(search_command.join(" AND "), search_values)
+    if search[:date] != ''
+     @tools = filter_by_date(@tools, search['date'])
+    end
   end
 
   def show
@@ -73,4 +76,28 @@ class ToolsController < ApplicationController
     authorize @tool
   end
 
+  def filter_by_date(tools_array, searched_dates)
+    p tools_array
+    p selection = list_dates(searched_dates)
+    @tools = tools_array.select do |tool|
+      selection.all? { |e| tool.available_dates_after_bookings.include?(e) }
+    end
+    p @tools
+  end
+
+  def list_dates(dates_string)
+    dates = dates_string.split(' to ')
+    dates.map! { |date| Date.parse(date)}
+    list = []
+    i = dates[0]
+    if dates.length == 2
+      while i <= dates[1] do
+        list.push(i)
+        i += 1
+      end
+    else
+      list.push(dates[0])
+    end
+    list
+  end
 end
