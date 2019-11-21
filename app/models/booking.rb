@@ -20,4 +20,9 @@ class Booking < ApplicationRecord
     end
     bookings
   end
+
+  def dates_to_array
+    dates_array = self.dates.to_s.gsub(/\[|\]/,"").gsub(/\"/, "").split(",")
+    dates_array.map! { |date| Date.parse(date) }
+  end
 end
