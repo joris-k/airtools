@@ -17,9 +17,8 @@
           </p>
         </div>
         <div class="card-info-row">
-          <%booking_date = (booking.dates).to_s.gsub(/\[|\]/,"").gsub(/\"/,"").split(",")%>
           <div class="booking-time">
-            <p class="booking-period">Booking period: <%=booking_date[0]%> - <%=booking_date[1]%></p>
+            <p class="booking-period">Booking period: <%=booking.dates_to_array[0]%> - <%=booking.dates_to_array[1]%></p>
             <p class="booking-pickup">Pickup time: <%=(booking.pickup_time).to_s.match(/\d{2}:\d{2}/)%></p>
           </div>
         </div>
