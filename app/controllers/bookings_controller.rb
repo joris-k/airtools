@@ -66,18 +66,20 @@
   end
 
   def notification_response(booking, response)
-    if response == true
-      notification = Notification.new(message: "Your booking of the #{@booking.tool.name} has been confirmed.", read: false)
-    elsif response == false
-      notification = Notification.new(message: "Your booking of the #{@booking.tool.name} has been declined.", read: false)
+    p response
+    if response == "true"
+      text = "Your booking of the #{@booking.tool.name.downcase} has been confirmed."
+    else
+      text = "Your booking of the #{@booking.tool.name.downcase} has been declined."
     end
+    notification = Notification.new(message: text, read: false)
     notification.user = booking.user
     notification.booking = booking
     notification.save
   end
 
   def notification_request(booking)
-    notification = Notification.new(message: "You have received a new booking request for #{@booking.tool.name}", read: false)
+    notification = Notification.new(message: "You have received a new booking request for your tool '#{@booking.tool.name.downcase}'", read: false)
     notification.user = booking.tool.user
     notification.booking = booking
     notification.save
