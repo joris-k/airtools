@@ -32,6 +32,10 @@
       render :new
     end
     authorize @booking
+    notification = Notification.new(message: "You have received a new booking request for #{@booking.tool}.", read: false)
+    notification.user = @booking.tool.user
+    notification.booking = @booking
+    notification.save
   end
 
   def new
@@ -48,6 +52,10 @@
       @booking.confirmation = false
     end
     @booking.save
+    notification = Notification.new(message: "You have received a response regarding the #{@booking.tool.name}.", read: false)
+    notification.user = @booking.user
+    notification.booking = @booking
+    notification.save
     redirect_to @booking
   end
 

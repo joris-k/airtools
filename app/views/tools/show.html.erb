@@ -1,28 +1,32 @@
 <div>
   <div class="container min-height" id="margin-main">
     <div class="row">
-      <div class="col-8">
+      <div class="left col-8">
         <h1 class="giant-header"><%= @tool.name %></h1>
-        <h4 class="margin-head"> <strong>Brand: </strong>  <%= @tool.brand %></h4>
+        <h5 class="margin-head"> <strong>Brand: </strong>  <%= @tool.brand %></h5>
         <p><strong>Category: </strong><%= @tool.category %></p>
         <p><strong>Address: </strong><%= @tool.address %></p>
         <div class="description">
-          <p class="mb-2"><strong>Description: </strong></p>
+          <p class="mb-1"><strong>Description: </strong></p>
           <p><%= @tool.description %></p>
         </div>
-        <p class="mt-5" ><strong>Price: </strong><%='%.2f' % @tool.price.to_f%> €</p>
+        <p><strong>Owner: </strong><%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
+        <div class="price">
+          <p><strong>Price: </strong><%='%.2f' % @tool.price.to_f%> €</p>
 
-        <div class="booking-card">
-        <% if @tool.user != current_user%>
-          <%= link_to "Add booking", new_tool_booking_path(@tool), class: "btn button" %>
-        <%end%>
-        <% if policy(@tool).destroy?%>
-          <%= link_to "Edit tool", edit_tool_path(@tool), class: "btn button" %>
-        <% end %>
-        <p>Owner: <%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
-        <% if policy(@tool).destroy?%>
-          <%= link_to '🗑️', tool_path(@tool), method: :delete, class: "delete_btn" %>
-        <% end %>
+          <div class="booking-card">
+            <% if @tool.user != current_user%>
+              <%= link_to "Add booking", new_tool_booking_path(@tool), class: "btn button" %>
+            <%end%>
+
+            <% if policy(@tool).destroy?%>
+              <%= link_to "Edit tool", edit_tool_path(@tool), class: "btn button" %>
+            <% end %>
+
+            <% if policy(@tool).destroy?%>
+              <%= link_to '🗑️', tool_path(@tool), method: :delete, class: "delete_btn" %>
+            <% end %>
+          </div>
         </div>
       </div>
 

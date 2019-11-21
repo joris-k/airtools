@@ -9,6 +9,16 @@
         <button class="btn button" id="profile-bookings-button">My Bookings</button>
         <button class="btn button button-unselected" id="profile-tools-button">My Tools</button>
       </div>
+      <div class="notifications">
+        <% if current_user.notifications.where(read: false).empty? %>
+          <p class='my-0 not-header'> <span class='px-2'> <i class="fas fa-envelope"></i> </span> You have 0 notifications </p>
+        <% else %>
+          <p class='my-0 not-header'> <span class='px-2'> <i class="fas fa-envelope"></i> </span> Your notifications </p>
+          <% current_user.notifications.where(read: false).each do |notification| %>
+            <%= link_to notification.message, booking_path(notification.booking) %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
     <div class="" id="profile-bookings-show">
       <h1 class="main-title-spacing">Tools I Booked</h1>
