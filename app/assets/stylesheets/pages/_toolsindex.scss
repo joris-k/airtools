@@ -24,11 +24,13 @@
   grid-auto-rows: auto;
 }
 .filter {
-  background-color: white;
+
+}
+
+.filter-box {
   padding: 15px;
   position: sticky;
   top: 87px;
+  background-color: white;
   border-radius: 4px;
 }
-
-

@@ -9,3 +9,16 @@
   background-color: #479e77;
 
 }
+
+.line-of-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.button-unselected {
+  background-color: rgb(244, 244, 244);
+  color: $green-darkest;
+}
