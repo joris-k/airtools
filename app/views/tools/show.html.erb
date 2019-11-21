@@ -14,6 +14,9 @@
       <% if @tool.user != current_user%>
         <%= link_to "Add booking", new_tool_booking_path(@tool), class: "btn button" %>
       <%end%>
+      <% if policy(@tool).destroy?%>
+        <%= link_to "Edit tool", edit_tool_path(@tool), class: "btn button" %>
+      <% end %>
       <p>Owner: <%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
       <% if policy(@tool).destroy?%>
         <%= link_to '🗑️', tool_path(@tool), method: :delete, class: "delete_btn" %>

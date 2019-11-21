@@ -57,6 +57,14 @@ class ToolsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @tool.update(tool_params)
+    redirect_to tool_path(@tool)
+  end
+
   def destroy
     @tool.destroy
     redirect_to root_path
@@ -72,5 +80,4 @@ class ToolsController < ApplicationController
     @tool = Tool.find(params[:id])
     authorize @tool
   end
-
 end
