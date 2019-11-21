@@ -24,41 +24,13 @@
   grid-auto-rows: auto;
 }
 .filter {
-  background-color: white;
+
+}
+
+.filter-box {
   padding: 15px;
   position: sticky;
   top: 87px;
-}
-
-
-#map-container {
-  grid-column-start: 1;
-  grid-column-end: 4;
-}
-
-.mapboxgl-popup {
-  max-width: 200px;
-}
-
-.mapboxgl-popup-content {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  background-color: rgb( 247, 247, 247) !important;
-  text-align: left;
-}
-
-.mapboxgl-popup-close-button {
-  opacity: 0.3;
-}
-
-// .map-container {
-//   grid-column-start: 2;
-// }
-
-// .tools-list-show {
-//   grid-column-start: 2;
-// }
-
-.position-absolute {
-  position: absolute;
+  background-color: white;
+  border-radius: 4px;
 }
