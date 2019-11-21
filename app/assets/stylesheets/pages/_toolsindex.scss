@@ -16,6 +16,12 @@
   grid-auto-rows: auto;
 }
 
+.cards-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  grid-auto-rows: auto;
+}
 .filter {
   background-color: white;
   padding: 15px;
