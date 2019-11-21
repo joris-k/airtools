@@ -30,10 +30,14 @@ class Tool < ApplicationRecord
     booked_dates = []
     all_bookings.each do |booking|
       dates = booking.dates_to_array
-      i = dates[0]
-      while i <= dates[1]
-        booked_dates.push(i)
-        i+=1
+      if dates.length == 2
+        i = dates[0]
+        while i <= dates[1]
+          booked_dates.push(i)
+          i+=1
+        end
+      elsif dates.length == 1
+        booked_dates.push(dates)
       end
     end
     booked_dates
@@ -43,10 +47,14 @@ class Tool < ApplicationRecord
     available_ranges = self.dates_to_array
     available_dates = []
     available_ranges.each do |dates|
-      i = dates[0]
-      while i <= dates [1]
-        available_dates.push(i)
-        i+=1
+      if dates.length == 2
+        i = dates[0]
+        while i <= dates [1]
+          available_dates.push(i)
+          i+=1
+        end
+      elsif dates.length == 1
+        available_dates.push(dates)
       end
     end
     available_dates

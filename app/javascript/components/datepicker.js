@@ -1,5 +1,5 @@
 import flatpickr from "flatpickr";
-import { availabilities } from '../pages/booking';
+import { availabilities, realAvailabilities } from '../pages/booking';
 
 const displayPrice = (numberOfDays) => {
   const daysText = document.querySelector('#days');
@@ -13,8 +13,8 @@ const displayPrice = (numberOfDays) => {
 
 flatpickr(".datepicker", {
   mode: "range",
-  dateFormat: "d-m-Y",
-  enable: availabilities(),
+  dateFormat: "Y-m-d",
+  enable: realAvailabilities(),
   onChange: function(selectedDates) {
     if (document.querySelector('#total-price')) {
       let days = 1 + ((selectedDates[1] - selectedDates[0])/(1000*60*60*24));
@@ -26,4 +26,6 @@ flatpickr(".datepicker", {
   },
 })
 
+
+realAvailabilities()
 export default flatpickr;
