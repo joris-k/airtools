@@ -14,6 +14,7 @@ const displayPrice = (numberOfDays) => {
 flatpickr(".datepicker", {
   mode: "range",
   dateFormat: "Y-m-d",
+  minDate: "today",
   enable: realAvailabilities(),
   onChange: function(selectedDates) {
     if (document.querySelector('#total-price')) {
