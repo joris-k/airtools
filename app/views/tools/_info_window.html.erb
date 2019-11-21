@@ -1,17 +1,4 @@
 <!-- <h6><%#= tool.name %></h6> -->
 <!-- <a class="btn small-button" href="<% tool_path(tool) %>">View</a> -->
 
-<div class="card-tool">
-  <%= link_to(tool) do %>
-    <div class="card-tool-image" style="background-image: url('<%= cl_image_path tool.photo, height: 300, width: 400, crop: :fill %>')"> <p class="category-text category-tag"> <%= tool.category %> </p> </div>
-    <div class="card-info-box">
-      <div class="card-info-row">
-        <p class="subtitle"><%=tool.name%></p>
-      </div>
-      <div class="card-info-row mtop-5">
-        <p> <span class = "info-text-bold"> <%='%.2f' % tool.price.to_f%>€ </span> <span class = "info-text">/ day</span></p>
-        <p class="category-text"><%=tool.brand%></p>
-      </div>
-    </div>
-  <%end%>
-</div>
+<%= render 'shared/tool_card', tool: tool%>
