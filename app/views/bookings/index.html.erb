@@ -1,11 +1,29 @@
 <div class="container mbot-40 min-height">
-  <h1>Tools I Booked</h1>
-  <% @own_bookings.each do |booking| %>
-    <%= render 'shared/booking_card', booking: booking%>
-  <% end %>
+  <div class="profile-layout">
+    <div>
+      <div class="align-content-center">
+        <img class="avatar-vlarge" src="https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="user image">
+        <h1 class="main-title-spacing mtop-20">Hi, <%=current_user.first_name%> <%=current_user.last_name%></h1>
+      </div>
+      <div class="line-of-buttons">
+        <button class="btn button">My Bookings</button>
+        <button class="btn button button-unselected">My Tools</button>
+      </div>
+    </div>
+    <div>
+      <h1 class="main-title-spacing">Tools I Booked</h1>
+      <% @own_bookings.each do |booking| %>
+        <%= render 'shared/booking_card', booking: booking%>
+      <% end %>
 
-  <h1 class="mtop-20">Bookings For My Tools</h1>
-  <% @user_tool.each do |booking| %>
-    <%= render 'shared/booking_card', booking: booking%>
-  <% end %>
+      <h1 class="mtop-20 main-title-spacing" >Bookings For My Tools</h1>
+      <% @user_tool.each do |booking| %>
+        <%= render 'shared/booking_card', booking: booking%>
+      <% end %>
+    </div>
+    <div>
+
+    </div>
+  </div>
+
 </div>

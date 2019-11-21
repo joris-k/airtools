@@ -5,6 +5,7 @@
     @bookings = policy_scope(Booking)
     @own_bookings = Booking.own_bookings(current_user)
     @user_tool = Booking.own_tool_bookings(current_user)
+    @tools = Tool.where(user: current_user)
   end
 
   def show
