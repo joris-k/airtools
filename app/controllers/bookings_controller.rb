@@ -32,10 +32,7 @@
       render :new
     end
     authorize @booking
-    notification = Notification.new(message: "You have received a new booking request for #{@booking.tool}.", read: false)
-    notification.user = @booking.tool.user
-    notification.booking = @booking
-    notification.save
+    configure_notification(@booking)
   end
 
   def new
@@ -68,5 +65,12 @@
 
   def bookings_params
     params.require(:booking).permit(:comment, :pickup_time, :confirmation)
+  end
+
+  def configure_notification(booking)
+    notification = Notification.new(message: "You have received a new booking request for #{@booking.tool.name}", read: false)
+    notification.user = booking.tool.user
+    notification.booking = booking
+    notification.save
   end
 end
