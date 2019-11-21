@@ -1,9 +1,9 @@
 .giant-header {
-  font-size: 60px;
+  font-size: 50px;
 }
 
 .margin-head {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .booking-card {
@@ -29,11 +29,11 @@
 }
 
 .tool_image {
-  border-radius: 3px;
+  border-radius: 2px;
   object-fit: cover;
   width: 100%;
   margin-bottom: 10px;
-  margin-top: 30px;
+  max-height: 280px;
 }
 
 #margin-main {
@@ -43,14 +43,27 @@
 .map-styling {
   width: 100%;
   height: 400px;
-  border-radius: 3px;
-  margin-bottom: 15px;
+  border-radius: 2px;
+  margin-bottom: 30px;
 }
 
-.description {
-
+.left {
+  background-color: white;
+  border-radius: 2px;
+  margin-bottom: 30px;
+  position: relative;
+  padding: 17px 25px;
+  padding-right: 30px;
 }
 
+.left p {
+  font-size: 14px;
+}
+
+.price {
+  position: absolute;
+  bottom: 5px;
+}
 // .map-info-container {
 //   display: flex;
 //   justify-content: space-between;
