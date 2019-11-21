@@ -20,11 +20,25 @@ const initMapbox = () => {
     markers.forEach((marker) => {
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+        .setHTML(marker.info_window))
         .addTo(map);
     });
 
     fitMapToMarkers(map, markers);
   }
+
+  const addMarkersToMap = (map, markers) => {
+  markers.forEach((marker) => {
+    const popup = new mapboxgl.Popup().setHTML(marker.info_window); // add this
+
+    new mapboxgl.Marker()
+      .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup) // add this
+      .addTo(map);
+    });
+  };
 };
+
 
 export { initMapbox };

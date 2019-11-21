@@ -31,8 +31,7 @@
       <p>
         <span>Booking period:</span>
         <span>
-          <%booking_date = (@booking.dates).to_s.gsub(/\[|\]/,"").gsub(/\"/, "").split(",")%>
-          <%=booking_date[0]%> - <%=booking_date[1]%></span>
+          <%=@booking.dates_to_array[0]%> - <%=@booking.dates_to_array[1]%></span>
       </p>
       <p>
         <span>Suggested pickup time:</span>
@@ -62,13 +61,14 @@
   </div>
 
 
+
   <div class="card-tool-booking-outer">
     <div class="card-tool-booking">
       <%= cl_image_tag @tool.photo, crop: :fill, class: "tool_image" %>
       <h2 class='tool-name tool-card-link'><%= link_to @tool.name, @tool%></h2>
       <p class='tool-category'><%= @tool.category %>, <%= @tool.brand %></p>
       <p class='tool-description smaller-spacing' id='price-per-day'>Price/day: <%='%.2f' % @tool.price.to_f%> €</p>
-      <% days = ((Date.parse(booking_date[1])-Date.parse(booking_date[0])).to_i) + 1 %>
+      <% days = ((@booking.dates_to_array[1]-@booking.dates_to_array[0]).to_i) + 1 %>
       <p class='tool-description smaller-spacing' id='days'>Days: <%= days %> </p>
       <p class='tool-price' id='total-price'>Total price: <%='%.2f' % (@tool.price*days).to_f%> € </p>
     </div>

@@ -21,3 +21,8 @@
 </div>
 
 <div class='hidden' id='availabilities'> <%= @tool.date %></div>
+
+<%dates = @tool.available_dates_after_bookings %>
+<% dates.each do |date| %>
+  <div class='hidden real-availabilities'><%= date %></div>
+<% end %>

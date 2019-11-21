@@ -9,7 +9,8 @@ class ToolsController < ApplicationController
     @markers = @map_tools.map do |tool|
       {
         lat: tool.latitude,
-        lng: tool.longitude
+        lng: tool.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { tool: tool })
       }
     end
 
@@ -37,6 +38,14 @@ class ToolsController < ApplicationController
   end
 
   def show
+    @map_tools = Tool.geocoded
+
+    @markers = @map_tools.map do |tool|
+      {
+        lat: @tool.latitude,
+        lng: @tool.longitude
+      }
+    end
   end
 
   def new
@@ -57,6 +66,14 @@ class ToolsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @tool.update(tool_params)
+    redirect_to tool_path(@tool)
+  end
+
   def destroy
     @tool.destroy
     redirect_to root_path
@@ -65,12 +82,11 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :brand, :price, :category, :description, :photo)
+    params.require(:tool).permit(:name, :brand, :price, :category, :description, :photo, :address)
   end
 
   def set_tool
     @tool = Tool.find(params[:id])
     authorize @tool
   end
-
 end

@@ -18,8 +18,17 @@ const availabilities = () => {
     availability = supplyAvaliabilities(dates)
   }
   return availability;
+}
+
+const realAvailabilities = () => {
+  const dates = document.querySelectorAll('.real-availabilities');
+  const available_dates = [];
+  dates.forEach((element) => {
+    available_dates.push(element.innerText);
+  });
+  return available_dates;
 };
 
 
-export { availabilities }
+export { availabilities, realAvailabilities}
 
