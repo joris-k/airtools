@@ -1,38 +1,40 @@
+<div>
+  <div class="container min-height" id="margin-main">
+    <div class="row">
+      <div class="col-8">
+        <h1 class="giant-header"><%= @tool.name %></h1>
+        <h4 class="margin-head"> <strong>Brand: </strong>  <%= @tool.brand %></h4>
+        <p><strong>Category: </strong><%= @tool.category %></p>
+        <p><strong>Address: </strong><%= @tool.address %></p>
+        <div class="description">
+          <p class="mb-2"><strong>Description: </strong></p>
+          <p><%= @tool.description %></p>
+        </div>
+        <p class="mt-5" ><strong>Price: </strong><%='%.2f' % @tool.price.to_f%> €</p>
 
-<div class="container min-height">
-  <div class="tool_info">
-    <div class="image-card">
-      <%= cl_image_tag @tool.photo, height: 500, width: 500, crop: :fill, class: "tool_image" %>
-    </div>
-    <div class="info-card">
-      <h1><%= @tool.name %></h1>
-      <h3>Brand: <%= @tool.brand %></h3>
-      <p>Category: <%= @tool.category %></p>
-      <p>Description: <%= @tool.description %></p>
-      <p>Price: <%='%.2f' % @tool.price.to_f%> €</p>
-      <div class="booking-card">
-      <% if @tool.user != current_user%>
-        <%= link_to "Add booking", new_tool_booking_path(@tool), class: "btn button" %>
-      <%end%>
-      <% if policy(@tool).destroy?%>
-        <%= link_to "Edit tool", edit_tool_path(@tool), class: "btn button" %>
-      <% end %>
-      <p>Owner: <%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
-      <% if policy(@tool).destroy?%>
-        <%= link_to '🗑️', tool_path(@tool), method: :delete, class: "delete_btn" %>
-      <% end %>
+        <div class="booking-card">
+        <% if @tool.user != current_user%>
+          <%= link_to "Add booking", new_tool_booking_path(@tool), class: "btn button" %>
+        <%end%>
+        <% if policy(@tool).destroy?%>
+          <%= link_to "Edit tool", edit_tool_path(@tool), class: "btn button" %>
+        <% end %>
+        <p>Owner: <%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
+        <% if policy(@tool).destroy?%>
+          <%= link_to '🗑️', tool_path(@tool), method: :delete, class: "delete_btn" %>
+        <% end %>
+        </div>
       </div>
+
+
+      <div class="col-4">
+        <%= cl_image_tag @tool.photo, class: "tool_image" %>
+        <div
+          id="map"
+          class="map-styling"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
     </div>
   </div>
-  <p>Address: <%= @tool.address %></p>
-  <div id="map-container">
-     <div
-       id="map"
-       style="width: 100%;
-       height: 600px;"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-     ></div>
-   </div>
 </div>
-

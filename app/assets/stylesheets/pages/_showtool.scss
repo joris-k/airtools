@@ -1,20 +1,14 @@
-.image-card {
-  width: 50%;
+.giant-header {
+  font-size: 60px;
 }
 
-.tool_info {
-  display: flex;
-  margin: 25px auto;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.info-card {
-  width: 50%;
+.margin-head {
+  margin-bottom: 60px;
 }
 
 .booking-card {
   display:flex;
+  margin-bottom: 15px;
 }
 
 .booking-card p {
@@ -35,5 +29,54 @@
 }
 
 .tool_image {
-  border-radius: 5px;
+  border-radius: 3px;
+  object-fit: cover;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 30px;
 }
+
+#margin-main {
+  margin-top: 30px;
+}
+
+.map-styling {
+  width: 100%;
+  height: 400px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.description {
+
+}
+
+// .map-info-container {
+//   display: flex;
+//   justify-content: space-between;
+//   width: 100%;
+// }
+
+// .header-and-image {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+// .map-container {
+//   width: 40%;
+// }
+
+// .tool-descr {
+//   width: 60%;
+// }
+
+
+
+
+
+
+
+
+
+
+
