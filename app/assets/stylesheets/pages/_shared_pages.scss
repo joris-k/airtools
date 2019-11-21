@@ -1,8 +1,3 @@
-.standard-container {
-  width: 900px;
-  margin: 0 auto;
-}
-
 .subtitle {
   font-size: 16px;
   font-weight: 600;
@@ -40,4 +35,24 @@
 
 .mtop-20 {
   margin-top: 20px;
+}
+
+.mbot-20 {
+  margin-bottom: 10px;
+}
+
+.mbot-40 {
+  margin-bottom: 40px;
+}
+
+.mtop-25 {
+  margin-top: 25px;
+}
+
+.spacing-bottom {
+  padding-bottom: 20px;
+}
+
+.min-height {
+ min-height: calc(100vh - 97px)
 }
