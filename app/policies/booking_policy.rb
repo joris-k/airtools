@@ -10,7 +10,11 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def show?
-    record.user == user
+    record.user == user || record.tool.user == user
+  end
+
+  def update?
+    record.tool.user == user
   end
 end
 
