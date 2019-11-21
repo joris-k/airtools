@@ -15,4 +15,4 @@ addLinkInNavbarToggle();
 initSelect2();
 initAutocomplete();
 
-
+initMapbox();
