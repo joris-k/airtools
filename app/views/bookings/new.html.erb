@@ -1,4 +1,4 @@
-<div class="container mt-5 d-flex justify-content-between">
+<div class="container mtop-25 d-flex justify-content-between min-height">
 
   <div class="booking-form">
     <%= simple_form_for([@tool, @booking], html: { class: '' }) do |f| %>
@@ -8,13 +8,15 @@
       <%= f.button :submit, class: 'button' %>
   <% end %>
   </div>
-  <div class="card-tool-booking">
-    <%= cl_image_tag @tool.photo, crop: :fill, class: "tool_image" %>
-    <h2 class='tool-name'><%= @tool.name %></h2>
-    <p class='tool-category'><%= @tool.category %>, <%= @tool.brand %></p>
-    <p class='tool-description smaller-spacing' id='price-per-day' data-price='<%=@tool.price%>'>Price/day: <%='%.2f' % @tool.price.to_f%> €</p>
-    <p class='tool-description smaller-spacing' id='days'>Days: 1 </p>
-    <p class='tool-price' id='total-price'>Total price: <%='%.2f' % @tool.price.to_f%> € </p>
+  <div class="card-tool-booking-outer">
+    <div class="card-tool-booking">
+      <%= cl_image_tag @tool.photo, crop: :fill, class: "tool_image" %>
+      <h2 class='tool-name'><%= @tool.name %></h2>
+      <p class='tool-category'><%= @tool.category %>, <%= @tool.brand %></p>
+      <p class='tool-description smaller-spacing' id='price-per-day' data-price='<%=@tool.price%>'>Price/day: <%='%.2f' % @tool.price.to_f%> €</p>
+      <p class='tool-description smaller-spacing' id='days'>Days: 1 </p>
+      <p class='tool-price' id='total-price'>Total price: <%='%.2f' % @tool.price.to_f%> € </p>
+    </div>
   </div>
 </div>
 
