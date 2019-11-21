@@ -18,6 +18,9 @@
     @booking = Booking.new(bookings_params)
     if params[:booking][:dates] != ""
       @booking.dates = params[:booking][:dates].split(' to ')
+      if @booking.dates_to_array.length == 1
+        @booking.dates = "[#{@booking.dates_to_array[0].to_s}, #{@booking.dates_to_array[0].to_s}]"
+      end
     end
     @booking.user = current_user
     @booking.tool = @tool
