@@ -10,6 +10,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 import {addLinkInNavbarToggle} from '../pages/home.js';
 
 addLinkInNavbarToggle();
-initAutocomplete();
 initSelect2();
 initMapbox();
+initAutocomplete();
