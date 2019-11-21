@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_183526) do
     t.datetime "updated_at", null: false
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
+    t.string "user_photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
