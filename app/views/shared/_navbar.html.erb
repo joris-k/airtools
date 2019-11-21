@@ -19,17 +19,17 @@
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "+ Add a new tool", new_tool_path, class: "nav-link" %>
+          <%= link_to "Add Tool", new_tool_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Bookings", bookings_path, class: "nav-link" %>
+          <% user_name = "#{current_user.first_name} #{current_user.last_name}" %>
+          <%= link_to user_name, bookings_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://cdn.images.dailystar.co.uk/dynamic/1/photos/202000/Hipster-326202.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <p style="padding-left: 17px;">User: <%= current_user.first_name %> <%= current_user.last_name %></p>
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "Profile", bookings_path, class: "dropdown-item" %>
+            <%= link_to "Account", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
