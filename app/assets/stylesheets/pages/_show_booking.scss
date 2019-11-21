@@ -35,3 +35,16 @@
   border-radius: 2px;
   padding-right: 100px;
 }
+
+.tool-card-link {
+  a {
+    color: $green-darkest;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $green-mint;
+  }
+  // text-decoration: none;
+
+}
