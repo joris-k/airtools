@@ -1,6 +1,7 @@
 <div class="container mtop-25 d-flex justify-content-between min-height">
 
   <div class="booking-form">
+    <h2 class="mb-4"> Make a booking </h2>
     <%= simple_form_for([@tool, @booking], html: { class: '' }) do |f| %>
       <%= f.input :dates, as: :string, input_html: {class: "datepicker booking-dates"}, require: true%>
       <%= f.input :pickup_time, hint: 'Suggest a time to pick up the tool on the start date of your booking. The owner will let you know if the time works.' %>

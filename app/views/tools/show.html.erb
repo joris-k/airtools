@@ -2,9 +2,9 @@
   <div class="container min-height" id="margin-main">
     <div class="row">
       <div class="left col-8">
-        <h1 class="giant-header"><%= @tool.name %></h1>
-        <h5 class="margin-head"> <strong>Brand: </strong>  <%= @tool.brand %></h5>
-        <p><strong>Category: </strong><%= @tool.category %></p>
+        <h2 class="mb-4" ><%= @tool.name %></h2>
+        <p> <strong>Brand: </strong>  <%= @tool.brand %></p>
+        <p><strong> Category: </strong><%= @tool.category %></p>
         <p><strong>Address: </strong><%= @tool.address %></p>
         <div class="description">
           <p class="mb-1"><strong>Description: </strong></p>
@@ -12,7 +12,7 @@
         </div>
         <p><strong>Owner: </strong><%= @tool.user.first_name %> <%= @tool.user.last_name %></p>
         <div class="price">
-          <p><strong>Price: </strong><%='%.2f' % @tool.price.to_f%> €</p>
+          <p><strong>Price / day: </strong><%='%.2f' % @tool.price.to_f%> €</p>
 
           <div class="booking-card">
             <% if @tool.user != current_user%>
