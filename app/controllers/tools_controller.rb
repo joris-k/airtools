@@ -80,7 +80,7 @@ class ToolsController < ApplicationController
 
   def destroy
     @tool.destroy
-    redirect_to root_path
+    redirect_to bookings_path
   end
 
   private
