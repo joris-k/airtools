@@ -20,11 +20,11 @@
             <%end%>
 
             <% if policy(@tool).destroy?%>
-              <%= link_to "Edit tool", edit_tool_path(@tool), class: "btn button" %>
+              <%= link_to "Edit tool", edit_tool_path(@tool), class: "edit_btn btn button" %>
             <% end %>
 
             <% if policy(@tool).destroy?%>
-              <%= link_to '🗑️', tool_path(@tool), method: :delete, class: "delete_btn" %>
+              <%= link_to 'Delete tool', tool_path(@tool), method: :delete, class: "btn button" %>
             <% end %>
           </div>
         </div>

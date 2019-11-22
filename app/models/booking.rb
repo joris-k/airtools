@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :tool
   # has_one :user, through: :tool
-  has_many :notifications
+  has_many :notifications, dependent: :destroy
   validates :dates, presence: true
 
   def self.own_bookings(user)
