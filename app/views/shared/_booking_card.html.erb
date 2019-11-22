@@ -1,8 +1,8 @@
 <div class="card-tool mtop-10">
   <%= link_to(booking) do %>
     <div class="card-booking">
-      <div class="card-tool-image card-tool-image-width-30pc card-tool-image-radius-left" style="background-image: url('<%= cl_image_path booking.tool.photo, height: 300, width: 400, crop: :fill %>')"></div>
-      <div class="card-info-box vertical-card-align ">
+      <div class="card-tool-image-small card-tool-image-width-30pc card-tool-image-radius-left" style="background-image: url('<%= cl_image_path booking.tool.photo, height: 300, width: 400, crop: :fill %>')"></div>
+      <div class="card-info-box vertical-card-align p-4 ">
         <div class="card-info-row">
           <p class="booking-tool-name"><%= booking.tool.name %></p>
           <%confirmation = booking.confirmation%>
