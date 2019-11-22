@@ -104,19 +104,33 @@ tool16 = Tool.new(name: 'Chainsaw for work in the garden', address: 'Mulackstra�
 tool16.remote_photo_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Stihl_MS_170.JPG/1200px-Stihl_MS_170.JPG'
 tool16.save!
 
-tool16 = Tool.new(name: 'Chainsaw for felling trees', address: 'Brandenburger Tor', date: '[01-12-2019, 23-12-2019], [01-01-2020, 20-01-2019]', price: 16.0, category: 'Chainsaw', brand: 'High Caliper Growing', description: "The WORX 16” 3.5 HP 14.5 Amp chainsaw is a cut above the rest. For starters, the exclusive WORX patented tool-free chain replacement and auto-tensioning system eliminates the headaches faced with most other chainsaws – no lumberjack experience necessary to operate this chainsaw! ", user: User.find_by(first_name: 'Jan'))
-tool16.remote_photo_url = 'https://images.unsplash.com/photo-1556912743-54b370e8385b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
-tool16.save!
-
-tool17 = Tool.new(name: 'Brand new Chainsaw', address: 'Unter den Linden 6, Berlin', date: '[01-11-2019, 01-12-2019], [10-01-2020, 30-03-2020]', price: 17.5, category: 'Chainsaw', brand: 'Stihl', description: "STIHL chainsaws combine innovative technology with high power, optimum ergonomic design and low weight. These properties minimize the burden for man and the environment. STIHL supplies chainsaws in a variety of equipment versions and for all purposes, with power ratings from 1.3 kW to 6.4 kW (1.6 HP to 8.7 HP). Exciting insights to the work of professionals with chainsaws in the mountain forest can be found here", user: User.find_by(first_name: 'Jan'))
-tool17.remote_photo_url = 'https://images.unsplash.com/photo-1573154590154-00fd5ba63dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
+tool17 = Tool.new(name: 'Chainsaw for felling trees', address: 'Brandenburger Tor', date: '[01-12-2019, 23-12-2019], [01-01-2020, 20-01-2019]', price: 16.0, category: 'Chainsaw', brand: 'High Caliper Growing', description: "The WORX 16” 3.5 HP 14.5 Amp chainsaw is a cut above the rest. For starters, the exclusive WORX patented tool-free chain replacement and auto-tensioning system eliminates the headaches faced with most other chainsaws – no lumberjack experience necessary to operate this chainsaw! ", user: User.find_by(first_name: 'Jan'))
+tool17.remote_photo_url = 'https://images.unsplash.com/photo-1556912743-54b370e8385b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
 tool17.save!
 
-tool18 = Tool.new(name: 'Stihl Chainsaw', address: 'Friedrichstraße 180, Berlin', date: '[01-11-2019, 27-11-2019], [01-01-2020, 01-02-2020]', price: 20.0, category: 'Chainsaw', brand: 'Stihl', description: "Exciting insights to the work of professionals with chainsaws in the mountain forest can be found here", user: User.find_by(first_name: 'Mara'))
-tool18.remote_photo_url = 'https://images.unsplash.com/photo-1515433868209-994b50c7e2f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
+tool18 = Tool.new(name: 'Brand new Chainsaw', address: 'Unter den Linden 6, Berlin', date: '[01-11-2019, 01-12-2019], [10-01-2020, 30-03-2020]', price: 17.5, category: 'Chainsaw', brand: 'Stihl', description: "STIHL chainsaws combine innovative technology with high power, optimum ergonomic design and low weight. These properties minimize the burden for man and the environment. STIHL supplies chainsaws in a variety of equipment versions and for all purposes, with power ratings from 1.3 kW to 6.4 kW (1.6 HP to 8.7 HP). Exciting insights to the work of professionals with chainsaws in the mountain forest can be found here", user: User.find_by(first_name: 'Jan'))
+tool18.remote_photo_url = 'https://images.unsplash.com/photo-1573154590154-00fd5ba63dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
 tool18.save!
 
+tool19 = Tool.new(name: 'Stihl Chainsaw', address: 'Friedrichstraße 180, Berlin', date: '[01-11-2019, 27-11-2019], [01-01-2020, 01-02-2020]', price: 20.0, category: 'Chainsaw', brand: 'Stihl', description: "Exciting insights to the work of professionals with chainsaws in the mountain forest can be found here", user: User.find_by(first_name: 'Mara'))
+tool19.remote_photo_url = 'https://images.unsplash.com/photo-1515433868209-994b50c7e2f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
+tool19.save!
 
+tool19 = Tool.new(name: 'Colorful Chainsaw', address: 'Hegelplatz, Stuttgart', date: '[01-11-2019, 27-11-2019], [01-01-2020, 01-02-2020]', price: 22.0, category: 'Chainsaw', brand: 'Einhell', description: "The WORX 16” 3.5 HP 14.5 Amp chainsaw is a cut above the rest. For starters, the exclusive WORX patented tool-free chain replacement and auto-tensioning system eliminates the headaches faced with most other chainsaws – no lumberjack experience necessary to operate this chainsaw! The auto-tension system includes a single, oversized knob that automatically secures the bar and chain and maintains proper tension while you’re working.", user: User.find_by(first_name: 'Fred'))
+tool19.remote_photo_url = 'http://3.bp.blogspot.com/-2HnrqEx-3bQ/T34lCSq1RHI/AAAAAAAADz0/4CrwatksvT4/s1600/P1090907.JPG'
+tool19.save!
+
+tool19 = Tool.new(name: 'Strong and powerful Chainsaw', address: 'Bahnhofstraße 20-22, 48143 Münster', date: '[01-11-2019, 27-11-2019], [01-01-2020, 01-02-2020]', price: 15.0, category: 'Chainsaw', brand: 'Mantis', description: "Landscapers & contractors are demanding more cordless alternatives to corded & gas-powered outdoor power equipment. Makita is meeting demand with an expanding line of cordless OPE, including the 18V x2 LXT (36V) Brushless chain saw kit (model XCU03PT1). with zero emissions, lower noise, & considerably less maintenance, the chain saw is a welcome solution for cutting & trimming applications.", user: User.find_by(first_name: 'Jan'))
+tool19.remote_photo_url = 'https://blog.gooddayswork.ag/hubfs/Blog_images/chainsaw_safety.jpg#keepProtocol'
+tool19.save!
+
+tool19 = Tool.new(name: 'Chainsaw for any purpose', address: 'Riehler Str. 173, 50735 Köln', date: '[01-11-2019, 27-11-2019], [01-01-2020, 01-02-2020]', price: 17.0, category: 'Chainsaw', brand: 'Stihl', description: "Convenience features include a tool-less Chain adjustments, A front hand guard engineered to actuate chain brake When engaged, an electric brake for maximum productivity, & more. Model XCU03PT1 is a kit & includes the chain saw, four fast-charging 18V LXT Lithium-Ion 5 0Ah batteries & an efficient 18V Dual Port Rapid Optimum Charger.", user: User.find_by(first_name: 'Mara'))
+tool19.remote_photo_url = 'https://www.stihlusa.com/WebContent/PressReleases/Releases/aug30_stihlms261/ms261_act_004.jpg'
+tool19.save!
+
+tool19 = Tool.new(name: 'Simple but powerful Chainsaw', address: 'Friedrichstraße 180, Berlin', date: '[01-11-2019, 27-11-2019], [01-01-2020, 01-02-2020]', price: 22.5, category: 'Chainsaw', brand: 'Corona', description: "WORX 10 cordless chain saw boosts the 20V Power share platform with innovative technology. The patented tool-free auto chain tension system prevents over tightening & keeps optimal chain tension while cutting. Combined with an automatic oiling system with indicator & a compact design allows this saw to be practical in any quick clean up or pruning task.", user: User.find_by(first_name: 'Fred'))
+tool19.remote_photo_url = 'https://4.bp.blogspot.com/-d4WtHFbjVyM/WA4htueRt7I/AAAAAAAAPRQ/QpgpbJNkOcg0xmomXy8Z9RUK1VKUxbS-wCLcB/s1600/P1190874.JPG'
+tool19.save!
 
 puts 'Creating all bookings'
 Booking.create!(comment: 'I might commit a chainsaw massacre', dates: '[20-11-2019, 20-11-2019]', pickup_time: Time.parse('11:00'), user: user2, tool: tool2)
