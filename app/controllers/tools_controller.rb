@@ -32,10 +32,9 @@ class ToolsController < ApplicationController
       @tools = filter_by_date(@tools, search['date'])
     end
     @markers = @tools.map do |tool|
-      array = tool.geocode
       {
-        lat: array[0],
-        lng: array[1],
+        lat: tool.latitude,
+        lng: tool.longitude,
         info_window: render_to_string(partial: "info_window", locals: { tool: tool })
       }
     end
@@ -122,4 +121,5 @@ class ToolsController < ApplicationController
     all_tools = Tool.near(address, 20)
     @tools = array.select { |tool| all_tools.include?(tool) }
   end
+
 end
