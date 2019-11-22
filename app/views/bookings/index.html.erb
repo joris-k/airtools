@@ -3,7 +3,7 @@
     <div>
       <div class="align-content-center">
         <img class="avatar-vlarge" src="https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="user image">
-        <h1 class="main-title-spacing mtop-20">Hi, <%=current_user.first_name%> <%=current_user.last_name%></h1>
+        <h2 class="main-title-spacing mtop-20">Hi, <%=current_user.first_name%> <%=current_user.last_name%></h2>
       </div>
       <div class="line-of-buttons pa-15">
         <button class="btn button" id="profile-bookings-button">My Bookings</button>
@@ -20,19 +20,19 @@
         <% end %>
       </div>
     </div>
-    <div class="" id="profile-bookings-show">
-      <h1 class="main-title-spacing">Tools I Booked</h1>
+    <div class="ml-4" id="profile-bookings-show">
+      <h3 class="main-title-spacing">Tools I Booked</h3>
       <% @own_bookings.each do |booking| %>
         <%= render 'shared/booking_card', booking: booking%>
       <% end %>
 
-      <h1 class="mtop-20 main-title-spacing" >Bookings For My Tools</h1>
+      <h3 class="mtop-20 main-title-spacing" >Bookings For My Tools</h3>
       <% @user_tool.each do |booking| %>
         <%= render 'shared/booking_card', booking: booking%>
       <% end %>
     </div>
-    <div class="hidden" id="profile-tools-show">
-      <h1 class="main-title-spacing">My Tools</h1>
+    <div class="ml-4 hidden" id="profile-tools-show">
+      <h3 class="main-title-spacing">My Tools</h3>
       <div class="cards-grid-2">
         <% @tools.each do |tool| %>
           <%= render 'shared/tool_card', tool: tool%>
