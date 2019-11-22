@@ -25,6 +25,9 @@ class ToolsController < ApplicationController
       end
     end
     @tools = policy_scope(Tool).where(search_command.join(" AND "), search_values)
+    if search[:location] != ''
+      @tools = filter_by_location(@tools, search[:location])
+    end
     if search[:date] != ''
       @tools = filter_by_date(@tools, search['date'])
     end
@@ -113,5 +116,10 @@ class ToolsController < ApplicationController
       list.push(dates[0])
     end
     list
+  end
+
+  def filter_by_location(array, address)
+    all_tools = Tool.near(address, 20)
+    @tools = array.select { |tool| all_tools.include?(tool) }
   end
 end
