@@ -5,9 +5,10 @@ class Tool < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  validates :name, :brand, :price, :category, :description, presence: true
+  validates :name, :brand, :price, :category, :description, :address, presence: true
   validates :price, numericality: true
   mount_uploader :photo, PhotoUploader
+  validates :photo, presence:true
 
   def dates_to_array
     # split into array of 2
