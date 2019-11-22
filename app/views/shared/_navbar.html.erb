@@ -23,11 +23,15 @@
         </li>
         <li class="nav-item">
           <% user_name = "Your profile" %>
-          <%= link_to user_name, bookings_path, class: "nav-link" %>
+          <%= link_to(bookings_path, class: "nav-link")  do %>
+            <% if current_user.notifications.where(read: false).any?%>
+              Your profile <sup><i class="fas fa-envelope nav-bar-envelope"></i></sup>
+            <% else %>
+              Your profile
+            <% end %>
+          <% end %>
         </li>
-        <% if current_user.notifications.where(read: false).any?%>
-          <i class="fas fa-envelope nav-bar-envelope"></i>
-        <% end %>
+
         <li class="nav-item dropdown">
           <%= image_tag "https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
