@@ -26,7 +26,7 @@
           <%= link_to user_name, bookings_path, class: "nav-link" %>
         </li>
         <% if current_user.notifications.where(read: false).any?%>
-          <i class="fas fa-envelope"></i>
+          <i class="fas fa-envelope nav-bar-envelope"></i>
         <% end %>
         <li class="nav-item dropdown">
           <%= image_tag "https://cdn.images.dailystar.co.uk/dynamic/1/photos/202000/Hipster-326202.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
