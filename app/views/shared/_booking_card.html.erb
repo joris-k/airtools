@@ -23,7 +23,11 @@
           </div>
         </div>
         <div class="card-info-row">
-          <p class="booking-tool-owner">Owner: <%= booking.tool.user.first_name %> <%= booking.tool.user.last_name %></p>
+          <% if current_user == booking.tool.user %>
+            <p class="booking-tool-owner">Hirer: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+          <% else %>
+            <p class="booking-tool-owner">Owner: <%= booking.tool.user.first_name %> <%= booking.tool.user.last_name %></p>
+          <% end %>
         </div>
       </div>
     </div>
