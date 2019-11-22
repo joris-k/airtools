@@ -118,7 +118,7 @@ class ToolsController < ApplicationController
   end
 
   def filter_by_location(array, address)
-    all_tools = Tool.near(address, 20)
+    all_tools = Tool.near(address, 10)
     @tools = array.select { |tool| all_tools.include?(tool) }
   end
 
