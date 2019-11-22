@@ -56,7 +56,7 @@ tool4 = Tool.new(name: 'Rake', address: 'Luebeckertordamm 30', date: '[21-11-201
 tool4.remote_photo_url = 'https://nicollzg.files.wordpress.com/2016/06/rake.jpg?w=1200'
 tool4.save!
 
-tool5 = Tool.new(name: '4-Cycle Tiller', address: 'Nollendorfer Straße 13', date: '[01-11-2019, 28-11-2019], [20-12-2019, 23-12-2019]', price: 40, category: 'Tiller', brand: 'Mantis', description: 'Extremely powerful and loud', user: User.find_by(first_name: 'Peter', last_name: 'Lustig'))
+tool5 = Tool.new(name: '4-Cycle Tiller', address: 'Weidenweg 25, Berlin', date: '[01-11-2019, 28-11-2019], [20-12-2019, 23-12-2019]', price: 40, category: 'Tiller', brand: 'Mantis', description: 'Extremely powerful and loud', user: User.find_by(first_name: 'Peter', last_name: 'Lustig'))
 tool5.remote_photo_url = 'https://mantis.com/wp-content/uploads/2016/05/mantis-2-cycle-tiller-with-faststart-01.jpg'
 tool5.save!
 
