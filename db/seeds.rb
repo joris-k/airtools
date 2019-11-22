@@ -40,7 +40,7 @@ tool1 = Tool.new(name: 'Electric lawnmower', address: 'Wilhelms Allee 13, Hambur
 tool1.remote_photo_url = 'https://images.unsplash.com/photo-1564944817179-f03792efda53?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
 tool1.save!
 
-tool2 = Tool.new(name: 'Stihl combustion chainsaw', address: 'Bei der flottbeker Kirche 2, Hamburg', date: '[18-11-2019, 25-11-2019], [25-12-2019, 30-12-2019]', price: 20.75, category: 'Chainsaw', brand: 'Stihl', description: 'Combustion chainsaw with 40cm blade for branches and small to medium trees.', user: User.find_by(first_name: 'Jan', last_name: 'Pillemann Otze'))
+tool2 = Tool.new(name: 'Stihl combustion chainsaw', address: 'Alte Jakobstraße 124-128, 10969 Berlin', date: '[18-11-2019, 25-11-2019], [25-12-2019, 30-12-2019]', price: 20.75, category: 'Chainsaw', brand: 'Stihl', description: 'Combustion chainsaw with 40cm blade for branches and small to medium trees.', user: User.find_by(first_name: 'Jan', last_name: 'Pillemann Otze'))
 tool2.remote_photo_url = 'https://images.unsplash.com/photo-1550091345-8c561a255eca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80'
 tool2.save!
 
@@ -95,6 +95,26 @@ tool13.save!
 tool14 = Tool.new(name: 'Hydrostatic Riding Mower', address: 'Scharnweberstrasse 7', date: '[01-12-2019, 23-12-2019], [10-01-2020, 30-03-2020]', price: 42.0, category: 'Lawn Mower', brand: 'Husqvarna', description: "Husqvarna's riding lawn mowers offer premium performance with quality results. Their compact size makes them easy to maneuver and require less space for storage. Features such as fender-mounted cutting height adjustment, adjustable seat and an ergonomic steering wheel make these tractors simple and comfortable to operate. All tractors feature hydrostatic transmissions for smooth, variable forward and reverse speed. Air induction mowing technology improves airflow within the deck, ensuring a clean, consistent cut every time. For added versatility, all models can be equipped with a range of tow-able accessories and mulch kit for effective lawn fertilization.", user: User.find_by(first_name: 'Mara'))
 tool14.remote_photo_url = 'https://commercialmowerreviews.com/wp-content/uploads/2019/07/best-riding-lawn-mowers.jpg'
 tool14.save!
+
+tool15 = Tool.new(name: 'Strong chainsaw', address: 'Rudi-Dutschke-Straße 26, Berlin', date: '[01-12-2019, 23-12-2020], [10-01-2020, 30-03-2020]', price: 10.0, category: 'Chainsaw', brand: 'Root Assassin LLC', description: "Leerlaufdrehzahl: 2700 U/min Schalldruckpegel am Ohr der Bedienperson: 103 dB(A) Geräuschemissionsmess.: 112 dB(A) Hubraum: 45", user: User.find_by(first_name: 'Mara'))
+tool15.remote_photo_url = 'https://images.unsplash.com/photo-1489992767089-fb6e153d65e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'
+tool15.save!
+
+tool16 = Tool.new(name: 'Chainsaw for work in the garden', address: 'Mulackstraße 10, Berlin', date: '[01-12-2019, 23-12-2019], [10-01-2020, 30-03-2020]', price: 15.0, category: 'Chainsaw', brand: 'Bond Manufacturing', description: "Designed for safety and comfort, this WORX chainsaw includes a built-in safety chain brake that stops the chain in seconds whenever improper contact is made, protecting you in the event of kickback. Additionally, a rubber over-molded rear handle and ergonomic full-wrap front handle let you work in full control and comfort.", user: User.find_by(first_name: 'Fred'))
+tool16.remote_photo_url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Stihl_MS_170.JPG/1200px-Stihl_MS_170.JPG'
+tool16.save!
+
+tool16 = Tool.new(name: 'Chainsaw for felling trees', address: 'Brandenburger Tor', date: '[01-12-2019, 23-12-2019], [01-01-2020, 20-01-2019]', price: 16.0, category: 'Chainsaw', brand: 'High Caliper Growing', description: "The WORX 16” 3.5 HP 14.5 Amp chainsaw is a cut above the rest. For starters, the exclusive WORX patented tool-free chain replacement and auto-tensioning system eliminates the headaches faced with most other chainsaws – no lumberjack experience necessary to operate this chainsaw! ", user: User.find_by(first_name: 'Jan'))
+tool16.remote_photo_url = 'https://images.unsplash.com/photo-1556912743-54b370e8385b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
+tool16.save!
+
+tool17 = Tool.new(name: 'Brand new Chainsaw', address: 'Unter den Linden 6, Berlin', date: '[01-11-2019, 01-12-2019], [10-01-2020, 30-03-2020]', price: 17.5, category: 'Chainsaw', brand: 'Stihl', description: "STIHL chainsaws combine innovative technology with high power, optimum ergonomic design and low weight. These properties minimize the burden for man and the environment. STIHL supplies chainsaws in a variety of equipment versions and for all purposes, with power ratings from 1.3 kW to 6.4 kW (1.6 HP to 8.7 HP). Exciting insights to the work of professionals with chainsaws in the mountain forest can be found here", user: User.find_by(first_name: 'Jan'))
+tool17.remote_photo_url = 'https://images.unsplash.com/photo-1573154590154-00fd5ba63dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
+tool17.save!
+
+tool18 = Tool.new(name: 'Stihl Chainsaw', address: 'Friedrichstraße 180, Berlin', date: '[01-11-2019, 27-11-2019], [01-01-2020, 01-02-2020]', price: 20.0, category: 'Chainsaw', brand: 'Stihl', description: "Exciting insights to the work of professionals with chainsaws in the mountain forest can be found here", user: User.find_by(first_name: 'Mara'))
+tool18.remote_photo_url = 'https://images.unsplash.com/photo-1515433868209-994b50c7e2f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
+tool18.save!
 
 
 
