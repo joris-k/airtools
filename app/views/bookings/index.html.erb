@@ -2,8 +2,15 @@
   <div class="profile-layout">
     <div>
       <div class="align-content-center">
-        <img class="avatar-vlarge" src="https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80" alt="user image">
+        <% if current_user.photo? %>
+           <%= cl_image_tag current_user.photo, class: "avatar-vlarge" %>
+         <% else %>
+           <%= cl_image_tag 'snmjibatw66rduqpmt3b', class: "avatar-vlarge" %>
+         <% end %>
         <h2 class="main-title-spacing mtop-20">Hi, <%=current_user.first_name%> <%=current_user.last_name%></h2>
+      </div>
+      <div class="align-edit-btn">
+        <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn button edit-btn" %>
       </div>
       <div class="line-of-buttons pa-15">
         <button class="btn button" id="profile-bookings-button">My Bookings</button>
@@ -42,3 +49,4 @@
   </div>
 
 </div>
+

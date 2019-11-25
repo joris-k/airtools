@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :tools, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  mount_uploader :photo, PhotoUploader
 
-  validates :first_name, :last_name, :email, :password, :password_confirmation, presence: true
+  validates :first_name, :last_name, :email, presence: true
 end
