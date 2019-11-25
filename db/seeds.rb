@@ -22,7 +22,7 @@ User.destroy_all
 
 
 puts 'Creating all users'
-user1 = User.new(first_name: 'Peter', last_name: 'Lustig', email: 'peter.lustig@example.com', password: '123456', password_confirmation: '123456', )
+user1 = User.new(first_name: 'Peter', last_name: 'Lustig', email: 'peter.lustig@example.com', password: '123456', password_confirmation: '123456', photo: 'izermfovytzt8c6ovuhr')
 user1.save!
 
 user2 = User.new(first_name: 'Mara', last_name: 'Musterfrau', email: 'mara.musterfrau@example.com', password: '123456', password_confirmation: '123456', )
